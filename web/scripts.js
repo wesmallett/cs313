@@ -6,13 +6,11 @@ $(document).ready(function(){
     });
 
     $("#fade").click(function(){
-        var visiblity = $("#hermonie").css("visibility");
-        if(visibility == "hidden"){
-            $("#hermonie").fadein("slow");
-            $("#hermonie").css("visibility","visible");
+        var display = $("#hermonie").css("display");
+        if(display == "none"){
+            $("#hermonie").fadeIn("slow");
         }else{
-            $("#hermonie").fadeout("slow");
-            $("#hermonie").css("visibility","hidden");
+            $("#hermonie").fadeOut("slow");
         }
     });
 });
