@@ -1,0 +1,25 @@
+div#harry{
+    background-color: red;
+    width:100%;
+    height:20px;
+}
+div#harry:hover{
+    background-color: purple;
+}
+div#ron{
+    background-color: blue;
+    width:100%;
+    height:20px;
+}
+div#ron:hover{
+    background-color:green;
+}
+div#hermonie{
+    background-color: yellow;
+    width:100%;
+    height:20px;
+    visibility:visible;
+}
+div#hermonie:hover{
+    background-color: pink;
+}
