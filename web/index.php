@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        <img src='family.jpeg'/>
+        <img src='family.png'/>
         <nav>
             <a href="assignments.html">Assignments</a>
         </nav>
