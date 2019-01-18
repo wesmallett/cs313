@@ -4,8 +4,8 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Homework</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link rel="stylesheet" href="style.css" type="text/css">
-        <script src="scripts.js"></script>
     </head>
     <body>
         <div>
