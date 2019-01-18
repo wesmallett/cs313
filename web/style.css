@@ -1,3 +1,8 @@
 .timezone-button{
     display:inline;
 }
+
+div#time {
+    margin-top: 5%;
+    text-align: center;
+}
