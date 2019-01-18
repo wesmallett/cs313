@@ -32,12 +32,12 @@
         </form>
 
         <?php 
-        if(isset($_GET['timezone']){
+        if(isset($_GET['timezone'])){
             date_default_timezone_set($_GET["timezone"]);
-            echo "The time in " . $_GET["timezone"] ." is " . date("h:i:sa")
+            echo "The time in " . $_GET["timezone"] ." is " . date("h:i:sa");
         }else{
             date_default_timezone_set("America/Denver");
-            echo "The time in America/Denver is " . date("h:i:sa")
+            echo "The time in America/Denver is " . date("h:i:sa");
         }
         ?>
     </body>
