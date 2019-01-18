@@ -12,7 +12,7 @@
         <p>My name is Wes Mallett and this is my homepage! I live in Herriman, UT and I enjoy working with my hands - really any project my wife gives me. </P>
     
         </div>
-        Here is the current time:
+        <p>Click a timezone to change the time:</p>
         <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/Los_Angeles">
         </form>
