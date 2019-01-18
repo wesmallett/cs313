@@ -9,11 +9,11 @@
     </head>
     <body>
         <nav>
-            <a href="assignments.html">Assignments<a/>
+            <a href="assignments.html">Assignments</a>
         </nav>
         <img src='family.jpeg'/>
         <div id="about-me">
-        <p>My name is Wes Mallett and this is my homepage! I live in Herriman, UT and I enjoy working with my hands - really any project my wife gives me. Together, my wife and I have 2 girls and we love doing anything outdoors. Below is a small php function I wrote to change the time to different timezones.</P>
+            <p>My name is Wes Mallett and this is my homepage! I live in Herriman, UT and I enjoy working with my hands - really any project my wife gives me. Together, my wife and I have 2 girls and we love doing anything outdoors. Below is a small php function I wrote to change the time to different timezones.</P>
     
         </div>
         <div id="timezone-selection">
@@ -42,15 +42,15 @@
         </div>
 
         <div id='time'>
-        <?php 
-        if(isset($_GET['timezone'])){
-            date_default_timezone_set($_GET["timezone"]);
-            echo "<p>The time in " . $_GET["timezone"] ." is: <br><br>" . date("h:i:sa")."</p>";
-        }else{
-            date_default_timezone_set("America/Denver");
-            echo "<p>The time in America/Denver is: <br><br>" . date("h:i:sa")."</p>";
-        }
-        ?>
+            <?php 
+            if(isset($_GET['timezone'])){
+                date_default_timezone_set($_GET["timezone"]);
+                echo "<p>The time in " . $_GET["timezone"] ." is: <br><br>" . date("h:i:sa")."</p>";
+            }else{
+                date_default_timezone_set("America/Denver");
+                echo "<p>The time in America/Denver is: <br><br>" . date("h:i:sa")."</p>";
+            }
+            ?>
         </div>
     </body>
 </html>
