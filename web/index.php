@@ -8,7 +8,9 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        <a href="assignments.html">Assignments<a/>
+        <nav>
+            <a href="assignments.html">Assignments<a/>
+        </nav>
         <img src='family.jpeg'/>
         <div id="about-me">
         <p>My name is Wes Mallett and this is my homepage! I live in Herriman, UT and I enjoy working with my hands - really any project my wife gives me. Together, my wife and I have 2 girls and we love doing anything outdoors. Below is a small php function I wrote to change the time to different timezones.</P>
