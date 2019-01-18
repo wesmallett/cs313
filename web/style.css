@@ -7,7 +7,7 @@ body{
     display:inline;
 }
 div#time {
-    background-color: blue;
+    background-color: #27556C;
     text-align: center;
     font-size: 2em;
     height: 200px;
@@ -23,7 +23,7 @@ div#timezone-selection {
 div#about-me {
     height: 200px;
     margin-top: -12px;
-    background-color: red;
+    background-color: #AA5139;
     width: 100%;
     padding-top: 66px;
     margin-left: -10px;
