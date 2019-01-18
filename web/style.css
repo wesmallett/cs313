@@ -1,12 +1,36 @@
+body{
+    font-family: "Montserrat";
+    font-size: 1.3em;
+    width:100%;
+}
 .timezone-button{
     display:inline;
 }
-
 div#time {
-    margin-top: 5%;
+    background-color: blue;
     text-align: center;
     font-size: 2em;
+    height: 200px;
+    margin-top: -33px;
+    padding-top: 1%;
 }
-body{
-    font-family: "Montserrat";
+div#timezone-selection {
+    height: 200px;
+    margin-top: -16px;
+    text-align: center;
+    padding-top: 35px;
+}
+div#about-me {
+    height: 200px;
+    margin-top: -12px;
+    background-color: red;
+    width: 100%;
+    padding-top: 66px;
+    margin-left: -10px;
+    text-align: center;
+}
+img {
+    width: 33%;
+    margin-left: 33%;
+    margin-bottom: -46px;
 }
