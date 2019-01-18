@@ -39,7 +39,7 @@
         <?php 
         if(isset($_GET['timezone'])){
             date_default_timezone_set($_GET["timezone"]);
-            echo "The time in " . $_GET["timezone"] ." is " . date("h:i:sa");
+            echo "<p>The time in " . $_GET["timezone"] ." is <br><br>" . date("h:i:sa")."</p>";
         }else{
             date_default_timezone_set("America/Denver");
             echo "<p>The time in America/Denver is <br><br>" . date("h:i:sa")."</p>";
