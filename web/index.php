@@ -13,8 +13,8 @@
     </head>
     <body>
         Here is the current time:
-        <?php
-            echo date("h:i:sa")
-        ?>
+        <form action="show_time.php" method="get">
+            <input type="submit" name="timezone" value="America/Los_Angeles">
+        </form>
     </body>
 </html>
