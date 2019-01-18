@@ -8,29 +8,34 @@
         <script src="scripts.js"></script>
     </head>
     <body>
+        <div>
+        <p>My name is Wes Mallett and this is my homepage! I live in Herriman, UT and I enjoy working with my hands - really any project my wife gives me. </P>
+    
+        </div>
         Here is the current time:
-        <form action="index.php" method="get">
+        <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/Los_Angeles">
         </form>
-        <form action="show_time.php" method="get">
+        <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/New_York">
         </form>
-        <form action="show_time.php" method="get">
+        <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/Chicago">
         </form>
-        <form action="show_time.php" method="get">
+        <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/Denver">
         </form>
-        <form action="show_time.php" method="get">
+        <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/Phoenix">
         </form>
-        <form action="show_time.php" method="get">
+        <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/Anchorage">
         </form>
-        <form action="show_time.php" method="get">
+        <form action="index.php" method="get" class="timezone-button">
             <input type="submit" name="timezone" value="America/Honolulu">
         </form>
 
+        <div id='time'>
         <?php 
         if(isset($_GET['timezone'])){
             date_default_timezone_set($_GET["timezone"]);
@@ -40,5 +45,6 @@
             echo "The time in America/Denver is " . date("h:i:sa");
         }
         ?>
+        </div>
     </body>
 </html>
