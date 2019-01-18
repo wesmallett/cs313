@@ -30,5 +30,8 @@
         <form action="show_time.php" method="get">
             <input type="submit" name="timezone" value="America/Honolulu">
         </form>
+
+        <?php include 'show_time.php';
+        ?>
     </body>
 </html>
