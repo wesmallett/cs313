@@ -1,6 +1,5 @@
 <?php
-include ("../data/companyData.php");
-$db = get_db();
+// $db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +9,7 @@ $db = get_db();
 
     <body>
     <?php 
+    include ("../data/companyData.php");
     $result = getAllStatus();
     echo $result;
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
