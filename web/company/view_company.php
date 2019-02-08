@@ -1,7 +1,7 @@
 <?php
-// require_once "../resources/dbConnect.php";
-// $db = get_db();
+require_once "../resources/dbConnect.php";
 include "../companyData.php";
+$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@ include "../companyData.php";
 
     <body>
     <?php 
-    $result = getAllStatus();
+    $result = getAllStatus($db);
     echo $result;
 
     // while($row = $statement->fetch(PDO::FETCH_ASSOC)){
