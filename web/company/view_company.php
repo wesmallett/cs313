@@ -12,6 +12,9 @@ $db = get_db();
 
     <body>
     <h1>Companies</h1>
+    <form action="createNewCompany.php">
+        <input type="submit" value="Add New"/>
+    </form>
     <table>
     <tr>
         <th>Name</th>

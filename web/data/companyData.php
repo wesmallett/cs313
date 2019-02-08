@@ -1,4 +1,5 @@
 <?php
+require "../models/company.php";
 
 function getAllCompanies($db){
     $sql = "SELECT * FROM company";
@@ -13,6 +14,16 @@ function getCompany($db,$id){
     $statement->bind_param('i',$id);
     $statement->execute();
     return $statement->fetchAll();
+}
+
+function insertCompany($db,$company){
+    $sql = "INSERT INTO company (companyname,streedaddress,city,state,zipcode,companywebsite,notes,pointofcontact,phonenumber,email)
+                VALUES (?,?,?,?,?,?,?,?,?,?)";
+    $statement = $db->prepare($sql);
+    $statement->bind_param('s,s,s,s,s,s,s,s,s,s',$company->getName(), $company->getStreetaddress(), $company->getCity(), $company->getState(), $company->getZip(),
+        $company->getWebsite(), $company->getNotes(), $company->getPointOfContact(), $company->getPhoneNumber(), $company->getEmail());
+    $statement->execute();
+            
 }
 
 ?>
