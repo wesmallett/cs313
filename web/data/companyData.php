@@ -23,9 +23,9 @@ function insertCompany($db,$company){
     $statement->bind_param('s,s,s,s,s,s,s,s,s,s',$company->getName(), $company->getStreetaddress(), $company->getCity(), $company->getState(), $company->getZip(),
         $company->getWebsite(), $company->getNotes(), $company->getPointOfContact(), $company->getPhoneNumber(), $company->getEmail());
     if($statement->execute()){
-
+        error_log("SUCCESS!!!");
     }else{
-        print_r($statement->error);
+        error_log("ERROR: ".$statement->error);
     }
             
 }
