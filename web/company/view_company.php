@@ -12,12 +12,13 @@ $db = get_db();
     <?php 
     $sql = "SELECT status FROM application_status";
     $statement = $db->prepare($sql);
-    $statement->execute();
+    $result = $statement->execute()->fetchAll();
+    echo $result;
 
-    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-        $status = $row['status'];
-        echo "<h1>$status</h1>";
-    }
+    // while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+    //     $status = $row['status'];
+    //     echo "<h1>$status</h1>";
+    // }
 
     $result2 = getAllStatus2();
     echo $result2;
