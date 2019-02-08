@@ -62,6 +62,9 @@ $db = get_db();
             $company->setEmail($_POST['email']);
 
             insertCompany($db, $company);
+
+            header("Location: view_company.php");
+            exit();
         }
 
         
