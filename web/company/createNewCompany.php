@@ -1,7 +1,7 @@
 <?php
 require_once "../resources/dbConnect.php";
 require "../data/companyData.php";
-require "../models/company.php";
+include_once "../models/company.php";
 $db = get_db();
 ?>
 <!DOCTYPE HTML>

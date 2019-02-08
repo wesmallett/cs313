@@ -1,5 +1,5 @@
 <?php
-require "../models/company.php";
+include_once "../models/company.php";
 
 function getAllCompanies($db){
     $sql = "SELECT * FROM company";
