@@ -7,17 +7,44 @@ $db = get_db();
 <html>
     <head>
         <title>Companies</title>
+        <link rel="stylesheet" href="stylings.css" type="text/css">
     </head>
 
     <body>
-    <?php 
-    $result = getAllStatus($db);
-    echo $result;
-
-    foreach($result as $row){
-        $status = $row['status'];
-        echo "<h1>$status</h1>";
+    <h1>Companies</h1>
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Point of Contact</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Website</th>
+    </tr>
+    <?php
+    $companies = getAllCompanies($db);
+    foreach($companies as $company){
+        ?>
+        <td><?=$company['companyname']?></td>
+        <td><?=$company['streedaddress']." ".$company['city'].", ".$company['state']." ".$company['zipcode']?></td>
+        <td><?=$company['pointofcontact']?></td>
+        <td><?=$company['phonenumber']?></td>
+        <td><?=$company['email']?></td>
+        <td><?=$company['companywebsite']?></td>
+    <?php
     }
+    ?>
+    <tr>
+        <td>Company 1</td>
+        <td>123 Main st</td>
+        <td>BillBo Baggins</td>
+        <td>555-555-5555</td>
+        <td>bill@baggins.com</td>
+        <td>www.google.com</td>
+    </tr>
+    </table>
+    <?php 
+
     ?>
     </body>
 </html>
