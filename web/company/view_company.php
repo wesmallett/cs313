@@ -1,5 +1,6 @@
 <?php
-// $db = get_db();
+require_once "../resources/dbConnect.php";
+$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +10,9 @@
 
     <body>
     <?php 
-    include ("../data/companyData.php");
-    $result = getAllStatus();
-    echo $result;
+    $sql = "SELECT status FROM application_status";
+    $result = $db->query($sql)->fetchAll();
+
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         $status = $row['status'];
         echo "<h1>$status</h1>";
