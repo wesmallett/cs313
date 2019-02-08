@@ -1,5 +1,7 @@
 <?php
+require_once "../resources/dbConnect.php";
 require "../data/companyData.php";
+$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,19 +11,12 @@ require "../data/companyData.php";
 
     <body>
     <?php 
-    $result = getAllStatus();
+    $result = getAllStatus($db);
     echo $result;
 
-    // while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-    //     $status = $row['status'];
-    //     echo "<h1>$status</h1>";
-    // }
-
-    $result2 = getAllStatus2();
-    echo $result2;
-    while($row2 = $result2->fetch(PDO::FETCH_ASSOC)){
-        $status2 = $row2['status'];
-        echo "<h1>$status2</h1>";
+    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+        $status = $row['status'];
+        echo "<h1>$status</h1>";
     }
     ?>
     </body>
