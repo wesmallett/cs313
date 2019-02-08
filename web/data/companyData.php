@@ -22,7 +22,11 @@ function insertCompany($db,$company){
     $statement = $db->prepare($sql);
     $statement->bind_param('s,s,s,s,s,s,s,s,s,s',$company->getName(), $company->getStreetaddress(), $company->getCity(), $company->getState(), $company->getZip(),
         $company->getWebsite(), $company->getNotes(), $company->getPointOfContact(), $company->getPhoneNumber(), $company->getEmail());
-    $statement->execute();
+    if($statement->execute()){
+
+    }else{
+        print_r($statement->error);
+    }
             
 }
 
