@@ -11,9 +11,10 @@ $db = get_db();
     <body>
     <?php 
     $sql = "SELECT status FROM application_status";
-    $result = $db->query($sql)->fetchAll();
+    $statement = $db->prepare($sql);
+    $statement->execute();
 
-    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $status = $row['status'];
         echo "<h1>$status</h1>";
     }
