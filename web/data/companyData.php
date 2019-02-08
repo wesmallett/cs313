@@ -1,8 +1,8 @@
 <?php
-// require_once "../resources/dbConnect.php";
-// $db = get_db();
+require_once "../resources/dbConnect.php";
+$db = get_db();
 
-function getAllStatus($db){
+function getAllStatus(){
     $sql = "SELECT status FROM application_status";
     $statement = $db->prepare($sql);
     $statement->execute();

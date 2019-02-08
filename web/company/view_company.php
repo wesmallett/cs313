@@ -1,7 +1,5 @@
 <?php
-require_once "../resources/dbConnect.php";
 require "../data/companyData.php";
-$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +9,7 @@ $db = get_db();
 
     <body>
     <?php 
-    $result = getAllStatus($db);
+    $result = getAllStatus();
     echo $result;
 
     // while($row = $statement->fetch(PDO::FETCH_ASSOC)){
