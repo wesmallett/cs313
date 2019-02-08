@@ -1,6 +1,6 @@
 <?php
 require_once "../resources/dbConnect.php";
-include "../companyData.php";
+require "../companyData.php";
 $db = get_db();
 ?>
 <!DOCTYPE html>
