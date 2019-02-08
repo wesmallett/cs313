@@ -11,6 +11,7 @@ $db = get_db();
     <body>
     <?php 
     $result = getAllStatus();
+    echo $result;
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         $status = $row['status'];
         echo "<h1>$status</h1>";
