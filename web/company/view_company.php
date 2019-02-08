@@ -12,7 +12,8 @@ $db = get_db();
     <?php 
     $sql = "SELECT status FROM application_status";
     $statement = $db->prepare($sql);
-    $result = $statement->execute()->fetchAll();
+    $statement->execute();
+    $result = $statement->fetchAll();
     echo $result;
 
     // while($row = $statement->fetch(PDO::FETCH_ASSOC)){
