@@ -1,6 +1,7 @@
 <?php
-require_once "../resources/dbConnect.php";
-$db = get_db();
+// require_once "../resources/dbConnect.php";
+// $db = get_db();
+include "../companyData.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,10 +11,7 @@ $db = get_db();
 
     <body>
     <?php 
-    $sql = "SELECT status FROM application_status";
-    $statement = $db->prepare($sql);
-    $statement->execute();
-    $result = $statement->fetchAll();
+    $result = getAllStatus();
     echo $result;
 
     // while($row = $statement->fetch(PDO::FETCH_ASSOC)){

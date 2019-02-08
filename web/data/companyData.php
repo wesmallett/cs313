@@ -4,8 +4,9 @@ $db = get_db();
 
 function getAllStatus(){
     $sql = "SELECT status FROM application_status";
-    $result = $db->query($sql)->fetchAll();
-    return $result;
+    $statement = $db->prepare($sql);
+    $statement->execute();
+    return $statement->fetchAll();
 }
 
 function getAllStatus2(){
