@@ -8,4 +8,9 @@ function getAllStatus(){
     return $result;
 }
 
+function getAllStatus2(){
+    $statement = $db->prepare("SELECT * FROM application_status");
+    return $statement->execute();
+}
+
 ?>
