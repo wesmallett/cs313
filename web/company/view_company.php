@@ -28,12 +28,14 @@ $db = get_db();
     $companies = getAllCompanies($db);
     foreach($companies as $company){
         ?>
+        <tr>
         <td><?=$company['companyname']?></td>
         <td><?=$company['streedaddress']." ".$company['city'].", ".$company['state']." ".$company['zipcode']?></td>
         <td><?=$company['pointofcontact']?></td>
         <td><?=$company['phonenumber']?></td>
         <td><?=$company['email']?></td>
         <td><?=$company['companywebsite']?></td>
+        </tr>
     <?php
     }
     ?>

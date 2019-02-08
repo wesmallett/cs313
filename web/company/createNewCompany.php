@@ -61,8 +61,6 @@ $db = get_db();
             $company->setPhoneNumber($_POST['phont-number']);
             $company->setEmail($_POST['email']);
 
-            echo $company->getName();
-
             insertCompany($db, $company);
         }
 

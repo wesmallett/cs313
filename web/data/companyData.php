@@ -30,11 +30,7 @@ function insertCompany($db,$company){
     $statement->bindParam(':poc',$company->getPointOfContact());
     $statement->bindParam(':phone',$company->getPhoneNumber());
     $statement->bindParam(':email',$company->getEmail());
-    if($statement->execute()){
-        error_log("SUCCESS!!!");
-    }else{
-        error_log("ERROR: ".$statement->error);
-    }
+    $statement->execute()
             
 }
 
