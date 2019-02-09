@@ -11,7 +11,7 @@ $db = get_db();
     </head>
 
     <body>
-    <?php include_once '../header.php'?>
+    <?php include_once '../navbar.php'?>
     <h1>Companies</h1>
     <form action="createNewCompany.php">
         <input type="submit" value="Add New"/>

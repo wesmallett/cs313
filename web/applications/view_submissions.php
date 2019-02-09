@@ -11,7 +11,7 @@ $db = get_db();
     </head>
 
     <body>
-    <?php include_once '../header.php'?>
+    <?php include_once '../navbar.php'?>
     <h1>Application Submissions</h1>
     <form action="addSubmission.php">
         <input type="submit" value="Add New Application"/>

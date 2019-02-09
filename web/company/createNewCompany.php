@@ -11,6 +11,8 @@ $db = get_db();
         <link rel="stylesheet" href="../stylings.css" type="text/css">
     </head>
     <body>
+    <?php include_once '../navbar.php'?>
+    <h1>Add Company</h1>
         <form action='createNewCompany.php' method="POST">
             <label>Name: 
                 <input type='text' name='name'/>
