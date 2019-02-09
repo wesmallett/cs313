@@ -36,7 +36,7 @@ $db = get_db();
         <td><?=$submission['submissiondate']?></td>
         <td><?=$submission['salaryrequested']?></td>
         <td><?=$submission['lastcontactdate']?></td>
-        <td><a href=<?=$submission['linktojobposting']?>><?=$submission['linktojobposting']?></a></td>
+        <td><a href='http://<?=$submission['linktojobposting']?>' target='_blank'><?=$submission['linktojobposting']?></a></td>
         </tr>
     <?php
     }

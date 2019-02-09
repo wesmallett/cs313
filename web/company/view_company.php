@@ -34,7 +34,7 @@ $db = get_db();
         <td><?=$company['pointofcontact']?></td>
         <td><?=$company['phonenumber']?></td>
         <td><?=$company['email']?></td>
-        <td><?=$company['companywebsite']?></td>
+        <td><a href='http://<?=$company['companywebsite']?>' target='_blank'><?=$company['companywebsite']?></a></td>
         </tr>
     <?php
     }
