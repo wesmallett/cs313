@@ -36,7 +36,7 @@ $db = get_db();
         <td><?=$submission['submissiondate']?></td>
         <td><?=$submission['salaryrequested']?></td>
         <td><?=$submission['lastcontactdate']?></td>
-        <td><?=$submission['linktojobposting']?></td>
+        <td><a href=<?=$submission['linktojobposting']?>><?=$submission['linktojobposting']?></a></td>
         </tr>
     <?php
     }
