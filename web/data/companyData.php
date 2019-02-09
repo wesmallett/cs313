@@ -8,10 +8,18 @@ function getAllCompanies($db){
     return $statement->fetchAll();
 }
 
-function getCompany($db,$id){
-    $sql = "SELECT * FROM company where id = ?";
+function getCompanyById($db,$id){
+    $sql = "SELECT * FROM company where id = :id";
     $statement = $db->prepare($sql);
-    $statement->bind_param('i',$id);
+    $statement->bind_param(':id',$id);
+    $statement->execute();
+    return $statement->fetchAll();
+}
+
+function getCompanyByName($db,$companyName){
+    $sql = "SELECT * FROM company where companyname = :name";
+    $statement = $db->prepare($sql);
+    $statement->bind_param(':name',$companyName);
     $statement->execute();
     return $statement->fetchAll();
 }
