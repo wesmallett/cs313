@@ -11,6 +11,7 @@ $db = get_db();
     </head>
 
     <body>
+    <?php include_once '../header.php'?>
     <h1>Companies</h1>
     <form action="createNewCompany.php">
         <input type="submit" value="Add New"/>
@@ -39,14 +40,6 @@ $db = get_db();
     <?php
     }
     ?>
-    <tr>
-        <td>Company 1</td>
-        <td>123 Main st</td>
-        <td>BillBo Baggins</td>
-        <td>555-555-5555</td>
-        <td>bill@baggins.com</td>
-        <td>www.google.com</td>
-    </tr>
     </table>
     <?php 
 
