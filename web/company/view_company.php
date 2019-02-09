@@ -7,7 +7,7 @@ $db = get_db();
 <html>
     <head>
         <title>Companies</title>
-        <link rel="stylesheet" href="stylings.css" type="text/css">
+        <link rel="stylesheet" href="../stylings.css" type="text/css">
     </head>
 
     <body>

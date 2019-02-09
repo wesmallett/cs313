@@ -8,7 +8,7 @@ $db = get_db();
 <html>
     <head>
         <title>Create New Company</title>
-        <link rel="stylesheet" href="stylings.css" type="text/css">
+        <link rel="stylesheet" href="../stylings.css" type="text/css">
     </head>
     <body>
         <form action='createNewCompany.php' method="POST">

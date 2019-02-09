@@ -6,12 +6,12 @@ $db = get_db();
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Companies</title>
-        <link rel="stylesheet" href="stylings.css" type="text/css">
+        <title>Application Submissions</title>
+        <link rel="stylesheet" href="../stylings.css" type="text/css">
     </head>
 
     <body>
-    <h1>Companies</h1>
+    <h1>Application Submissions</h1>
     <form action="addSubmission.php">
         <input type="submit" value="Add New Application"/>
     </form>
@@ -30,8 +30,8 @@ $db = get_db();
     foreach($submissions as $submission){
         ?>
         <tr>
-        <td><?=$submission['status']?></td>
-        <td><?=$submission['companyname']?></td>
+        <td><?=$submission['applicationstatusid']?></td>
+        <td><?=$submission['companyid']?></td>
         <td><?=$submission['jobtitle']?></td>
         <td><?=$submission['submissiondate']?></td>
         <td><?=$submission['salaryrequested']?></td>
