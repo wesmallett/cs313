@@ -32,6 +32,7 @@ $db = get_db();
     </form>
     <table>
     <tr>
+        <th>ID</th>
         <th></th>
         <th>Status</th>
         <th>Company</th>
