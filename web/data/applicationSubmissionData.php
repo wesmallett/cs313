@@ -13,7 +13,7 @@ function getSubmissionById($db,$id){
     $statement = $db->prepare($sql);
     $statement->bindParam(':id',$id);
     $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_CLASS,"../models/applicationSubmissionData.php");
+    $result = $statement->fetchAll(PDO::FETCH_CLASS,"../models/applicationSubmission.php");
     var_dump($result);
     return $result;
 }
