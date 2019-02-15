@@ -45,7 +45,7 @@ $db = get_db();
     foreach($submissions as $submission){
         ?>
         <tr>
-        <td><form action="submission_overview.php" method="POST">
+        <td><form action="submission_overview.php" method="GET">
         <input type="hidden" name=submissionId value=<?=$submission['id']?> />
         <input type="submit" id="view_overview" name="insert" value="View" />
         </form></td>
