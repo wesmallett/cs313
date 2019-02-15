@@ -46,7 +46,7 @@ $db = get_db();
         ?>
         <tr>
         <td><form action="submission_overview.php" method="POST">
-        <input type="hidden" id=submissionId value="<?=$submission['id']?>"/>
+        <input type="hidden" id=submissionId value="<?=$submission['submissionId']?>"/>
         <input type="submit" id="view_overview" name="insert" value="View" />
         </form></td>
         <td><?=$submission['status']?></td>
