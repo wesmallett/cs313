@@ -8,7 +8,7 @@ $db = get_db();
     <head>
         <title>Application Submissions</title>
         <link rel="stylesheet" href="../stylings.css" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function(){
                 $('#view_overview').click(function(){
