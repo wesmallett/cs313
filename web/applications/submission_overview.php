@@ -12,6 +12,6 @@ $db = get_db();
 
     <body>
 
-       <?php echo $_POST['submissionId'];?>
+       <?php echo $_GET['submissionId'];?>
     </body>
 </html>
