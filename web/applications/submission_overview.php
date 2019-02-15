@@ -13,7 +13,6 @@ $db = get_db();
     <body>
 
        <?php 
-       echo $_GET['submissionId'];
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
        echo $submission;
        ?>
