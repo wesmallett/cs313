@@ -13,7 +13,9 @@ $db = get_db();
     <body>
 
        <?php 
+       echo $_POST['id'];
        $submission = getSubmissionById($db,$_POST['id']);
+       echo $submission;
        ?>
        <h1><?=$submission['company']?></h1>;
     </body>
