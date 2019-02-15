@@ -1,5 +1,5 @@
 <?php
-require "../models/applicationSubmissionData.php";
+include_once "../models/applicationSubmission.php";
 
 // class ApplicationSubmission{
 //     var $id;
