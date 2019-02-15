@@ -16,10 +16,12 @@ $db = get_db();
 
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
-       
-       foreach($submission as $applicationSubmission){
-           echo $applicationSubmission->getJobtitle();
-       }
+       $submission[0]->getJobtitle();
+       $submission[1]->getJobtitle();
+       $submission->getJobtitle();
+    //    foreach($submission as $applicationSubmission){
+    //        echo $applicationSubmission->getJobtitle();
+    //    }
        ?>
        <h1><?=$submission['company']?></h1>
     </body>
