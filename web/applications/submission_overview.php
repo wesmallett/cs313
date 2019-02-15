@@ -1,6 +1,8 @@
 <?php
 require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
+include_once "../models/applicationSubmission.php";
+
 $db = get_db();
 ?>
 <!DOCTYPE html>
@@ -15,8 +17,8 @@ $db = get_db();
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
        
-       foreach($submission as $s){
-           echo $s->getCompany();
+       foreach($submission as $applicationSubmission){
+           echo $applicationSubmission->getCompany();
        }
        ?>
        <h1><?=$submission['company']?></h1>
