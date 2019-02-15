@@ -18,6 +18,7 @@ $db = get_db();
                     success: function(output){
                         alert(output);
                     }
+                    });
                 });
             });
         </script>
