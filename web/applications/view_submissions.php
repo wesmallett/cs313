@@ -8,6 +8,17 @@ $db = get_db();
     <head>
         <title>Application Submissions</title>
         <link rel="stylesheet" href="../stylings.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#view_overview').click(function(){
+                var submissionId = $(this).val();
+                var url = 'submission_overview.php',
+                data =  {'id': submissionId};
+                $.post(url, data);
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -30,12 +41,12 @@ $db = get_db();
     foreach($submissions as $submission){
         ?>
         <tr>
+        <td><input type="submit" id="view_overview" name="insert" value="<?=$submission['id']?>" /></td>
         <td><?=$submission['status']?></td>
         <td><?=$submission['company']?></td>
         <td><?=$submission['jobtitle']?></td>
         <td><?=$submission['submissiondate']?></td>
         <td><?=$submission['salaryrequested']?></td>
-        <td><?=$submission['lastcontactdate']?></td>
         <td><a href='http://<?=$submission['linktojobposting']?>' target='_blank'><?=$submission['linktojobposting']?></a></td>
         </tr>
     <?php
