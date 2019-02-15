@@ -12,7 +12,7 @@ $db = get_db();
         <script>
             $(document).ready(function(){
                 $('#view_overview').click(function(){
-                    $.ajax({url: 'submission_overview.php',
+                    $.ajax({
                     data:{'id': $(this).val()},
                     type: 'post',
                     success: function(output){
@@ -25,6 +25,12 @@ $db = get_db();
     </head>
 
     <body>
+    <?php
+    if( isset($_POST['id']) ){
+        echo $_POST['id'];
+        exit;
+}
+?>
     <?php include_once '../navbar.php'?>
     <h1>Application Submissions</h1>
     <form action="addSubmission.php">
