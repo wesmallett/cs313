@@ -1,34 +1,34 @@
 <?php
 class Company{
     var $id;
-    var $name;
+    var $companyname;
     var $streetaddress;
     var $city;
     var $state;
-    var $zip;
-    var $website;
+    var $zipcode;
+    var $companywebsite;
     var $notes;
-    var $pointOfContact;
-    var $phoneNumber;
+    var $pointofcontact;
+    var $phonenumber;
     var $email;
     
 
     /**
-     * Get the value of name
+     * Get the value of companyname
      */ 
-    public function getName()
+    public function getCompanyname()
     {
-        return $this->name;
+        return $this->companyname;
     }
 
     /**
-     * Set the value of name
+     * Set the value of companyname
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setCompanyname($companyname)
     {
-        $this->name = $name;
+        $this->companyname = $companyname;
 
         return $this;
     }
@@ -94,41 +94,21 @@ class Company{
     }
 
     /**
-     * Get the value of zip
+     * Get the value of zipcode
      */ 
-    public function getZip()
+    public function getZipcode()
     {
-        return $this->zip;
+        return $this->zipcode;
     }
 
     /**
-     * Set the value of zip
+     * Set the value of zipcode
      *
      * @return  self
      */ 
-    public function setZip($zip)
+    public function setZipcode($zipcode)
     {
-        $this->zip = $zip;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of website
-     */ 
-    public function getWebsite()
-    {
-        return $this->website;
-    }
-
-    /**
-     * Set the value of website
-     *
-     * @return  self
-     */ 
-    public function setWebsite($website)
-    {
-        $this->website = $website;
+        $this->zipcode = $zipcode;
 
         return $this;
     }
@@ -154,46 +134,6 @@ class Company{
     }
 
     /**
-     * Get the value of pointOfContact
-     */ 
-    public function getPointOfContact()
-    {
-        return $this->pointOfContact;
-    }
-
-    /**
-     * Set the value of pointOfContact
-     *
-     * @return  self
-     */ 
-    public function setPointOfContact($pointOfContact)
-    {
-        $this->pointOfContact = $pointOfContact;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of phoneNumber
-     */ 
-    public function getPhoneNumber()
-    {
-        return $this->phoneNumber;
-    }
-
-    /**
-     * Set the value of phoneNumber
-     *
-     * @return  self
-     */ 
-    public function setPhoneNumber($phoneNumber)
-    {
-        $this->phoneNumber = $phoneNumber;
-
-        return $this;
-    }
-
-    /**
      * Get the value of email
      */ 
     public function getEmail()
@@ -214,11 +154,83 @@ class Company{
     }
 
     /**
+     * Get the value of phonenumber
+     */ 
+    public function getPhonenumber()
+    {
+        return $this->phonenumber;
+    }
+
+    /**
+     * Set the value of phonenumber
+     *
+     * @return  self
+     */ 
+    public function setPhonenumber($phonenumber)
+    {
+        $this->phonenumber = $phonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pointofcontact
+     */ 
+    public function getPointofcontact()
+    {
+        return $this->pointofcontact;
+    }
+
+    /**
+     * Set the value of pointofcontact
+     *
+     * @return  self
+     */ 
+    public function setPointofcontact($pointofcontact)
+    {
+        $this->pointofcontact = $pointofcontact;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of companywebsite
+     */ 
+    public function getCompanywebsite()
+    {
+        return $this->companywebsite;
+    }
+
+    /**
+     * Set the value of companywebsite
+     *
+     * @return  self
+     */ 
+    public function setCompanywebsite($companywebsite)
+    {
+        $this->companywebsite = $companywebsite;
+
+        return $this;
+    }
+
+    /**
      * Get the value of id
      */ 
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 }
 

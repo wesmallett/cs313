@@ -21,7 +21,9 @@ function getCompanyByName($db,$companyName){
     $statement = $db->prepare($sql);
     $statement->bind_param(':name',$companyName);
     $statement->execute();
-    return $statement->fetchAll();
+    $result = $statement->fetchAll(PDO::FETCH_CLASS,"Company");
+    $company = $result[0];
+    return $company;
 }
 
 function insertCompany($db,$company){

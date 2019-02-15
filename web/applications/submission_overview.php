@@ -1,6 +1,7 @@
 <?php
 require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
+require "../data/companyData.php";
 include_once "../models/applicationSubmission.php";
 
 $db = get_db();
@@ -13,10 +14,21 @@ $db = get_db();
     </head>
 
     <body>
-
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
        echo $submission->getJobtitle();
        ?>
+       <label>Job Title</label><?=$submission->getJobtitle()?>
+       <label>Company</label><?=$submission->getCompany()?>
+       <?= $company = getCompanyByName($db,$submission->getCompany());?>
+       <?=$company->getStreetaddress()?>
+       <?=$company->getCity()?>
+       <?=$company->getState()?>
+       <?=$company->getZipcode()?>
+       <?=$company->getPointofcontact()?>
+       <?=$company->getEmail()?>
+       <?=$company->getPhonenumber()?>
+       <label>Salary Requested</label><?=$submission->getSalaryrequested()?>
+       <label>Notes</label><?=$submission->getNotes()?>
     </body>
 </html>
