@@ -8,7 +8,7 @@ if(!isempty($_POST['id'])){
     echo $submission;
 }
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Application Submissions</title>
@@ -18,4 +18,4 @@ if(!isempty($_POST['id'])){
     <body>
        <?php echo $submission;?>
     </body>
-</html> -->
+</html>
