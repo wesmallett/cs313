@@ -13,8 +13,8 @@ $db = get_db();
     <body>
 
        <?php 
-       echo $_GET['id'];
-       $submission = getSubmissionById($db,$_GET['id']);
+       echo $_GET['submissionId'];
+       $submission = getSubmissionById($db,$_GET['submissionId']);
        echo $submission;
        ?>
        <h1><?=$submission['company']?></h1>;
