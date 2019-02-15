@@ -14,6 +14,7 @@ $db = get_db();
 
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
+       echo $submission;
        foreach($submission as $s){
            echo $s;
        }
