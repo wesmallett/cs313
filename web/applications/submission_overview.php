@@ -12,6 +12,8 @@ $db = get_db();
 
     <body>
 
-       <?php echo $_GET['submissionId'];?>
+       <?php 
+       $submission = getSubmissionById($db,$_POST['id']);
+       echo $submission['companyname']?>
     </body>
 </html>
