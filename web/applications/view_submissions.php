@@ -16,7 +16,7 @@ $db = get_db();
                     data:{'id': $(this).val()},
                     type: 'post',
                     success: function(output){
-                        
+                        location.href='submission_overview.php';
                     }
                     });
                 });
