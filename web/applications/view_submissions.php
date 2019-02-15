@@ -14,7 +14,10 @@ $db = get_db();
                 $('#view_overview').click(function(){
                     $.ajax({url: 'submission_overview.php',
                     data:{'id': submissionId},
-                    type: 'post'
+                    type: 'post',
+                    success: function(output){
+                        alert(output);
+                    }
                 });
             });
         </script>
