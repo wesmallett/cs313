@@ -17,7 +17,6 @@ $db = get_db();
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
        $submission[0]->getJobtitle();
-       $submission[1]->getJobtitle();
        $submission->getJobtitle();
     //    foreach($submission as $applicationSubmission){
     //        echo $applicationSubmission->getJobtitle();
