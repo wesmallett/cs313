@@ -13,7 +13,7 @@ $db = get_db();
             $(document).ready(function(){
                 $('#view_overview').click(function(){
                 var submissionId = $(this).val();
-                var url = '/submission_overview.php',
+                var url = 'submission_overview.php',
                 data =  {'id': submissionId};
                 $.post(url, data);
                 });
