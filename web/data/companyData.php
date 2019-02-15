@@ -11,7 +11,7 @@ function getAllCompanies($db){
 function getCompanyById($db,$id){
     $sql = "SELECT * FROM company where id = :id";
     $statement = $db->prepare($sql);
-    $statement->bind_param(':id',$id);
+    $statement->bindParam(':id',$id);
     $statement->execute();
     return $statement->fetchAll();
 }
@@ -19,7 +19,7 @@ function getCompanyById($db,$id){
 function getCompanyByName($db,$companyName){
     $sql = "SELECT * FROM company where companyname = :name";
     $statement = $db->prepare($sql);
-    $statement->bind_param(':name',$companyName);
+    $statement->bindParam(':name',$companyName);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_CLASS,"Company");
     $company = $result[0];
