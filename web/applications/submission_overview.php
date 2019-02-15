@@ -14,7 +14,9 @@ $db = get_db();
 
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
-       echo $submission[0];
+       foreach($submission as $s){
+           echo $s;
+       }
        ?>
        <h1><?=$submission['company']?></h1>
     </body>
