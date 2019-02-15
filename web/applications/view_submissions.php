@@ -13,7 +13,7 @@ $db = get_db();
             $(document).ready(function(){
                 $('#view_overview').click(function(){
                     $.ajax({url: 'submission_overview.php',
-                    data:{'id': submissionId},
+                    data:{'id': $(this).val()},
                     type: 'post',
                     success: function(output){
                         alert(output);
