@@ -3,16 +3,33 @@ include_once "../models/applicationSubmission.php";
 
 class ApplicationSubmission{
     var $id;
-    var $companyId;
-    var $jobTitle;
-    var $salaryRequested;
+    var $company;
+    var $jobtitle;
+    var $salaryrequested;
     var $submissionDate;
     var $lastContactId;
-    var $resumeSubmission;
-    var $coverLetterSubmission;
+    var $resumesubmission;
+    var $coverlettersubmission;
     var $notes;
-    var $linkToJobPosting;
-    var $applicationStatusId;
+    var $linktojobposting;
+    var $applicationstatus;
+}
+
+function getAllAppSubmissions($db){
+    $sql = "SELECT t1.id,t3.companyname as company, t1.jobtitle, t1.salaryrequested, t1.submissiondate, t1.resumesubmission, t1.coverlettersubmission, t1.notes, t1.linktojobposting, t2.status as status FROM application_submissions t1 JOIN application_status t2 ON t1.applicationstatusid = t2.id JOIN company t3 ON t1.companyid = t3.id";
+    $statement = $db->prepare($sql);
+    $statement->execute();
+    return $statement->fetchAll();
+}
+
+function getSubmissionById($db,$id){
+    $sql = "SELECT t1.id,t3.companyname as company, t1.jobtitle, t1.salaryrequested, t1.submissiondate, t1.resumesubmission, t1.coverlettersubmission, t1.notes, t1.linktojobposting, t2.status as applicationstatus FROM application_submissions t1 JOIN application_status t2 ON t1.applicationstatusid = t2.id JOIN company t3 ON t1.companyid = t3.id WHERE t1.id = :id";
+    $statement = $db->prepare($sql);
+    $statement->bindParam(':id',$id);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_CLASS,"ApplicationSubmission");
+    var_dump($result);
+    return $result;
 
     /**
      * Get the value of id
@@ -23,41 +40,73 @@ class ApplicationSubmission{
     }
 
     /**
-     * Get the value of companyId
-     */ 
-    public function getCompanyId()
-    {
-        return $this->companyId;
-    }
-
-    /**
-     * Set the value of companyId
+     * Set the value of id
      *
      * @return  self
      */ 
-    public function setCompanyId($companyId)
+    public function setId($id)
     {
-        $this->companyId = $companyId;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Get the value of jobTitle
+     * Get the value of company
      */ 
-    public function getJobTitle()
+    public function getCompany()
     {
-        return $this->jobTitle;
+        return $this->company;
     }
 
     /**
-     * Set the value of jobTitle
+     * Set the value of company
      *
      * @return  self
      */ 
-    public function setJobTitle($jobTitle)
+    public function setCompany($company)
     {
-        $this->jobTitle = $jobTitle;
+        $this->company = $company;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of jobtitle
+     */ 
+    public function getJobtitle()
+    {
+        return $this->jobtitle;
+    }
+
+    /**
+     * Set the value of jobtitle
+     *
+     * @return  self
+     */ 
+    public function setJobtitle($jobtitle)
+    {
+        $this->jobtitle = $jobtitle;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of salaryrequested
+     */ 
+    public function getSalaryrequested()
+    {
+        return $this->salaryrequested;
+    }
+
+    /**
+     * Set the value of salaryrequested
+     *
+     * @return  self
+     */ 
+    public function setSalaryrequested($salaryrequested)
+    {
+        $this->salaryrequested = $salaryrequested;
 
         return $this;
     }
@@ -83,26 +132,6 @@ class ApplicationSubmission{
     }
 
     /**
-     * Get the value of salaryRequested
-     */ 
-    public function getSalaryRequested()
-    {
-        return $this->salaryRequested;
-    }
-
-    /**
-     * Set the value of salaryRequested
-     *
-     * @return  self
-     */ 
-    public function setSalaryRequested($salaryRequested)
-    {
-        $this->salaryRequested = $salaryRequested;
-
-        return $this;
-    }
-
-    /**
      * Get the value of lastContactId
      */ 
     public function getLastContactId()
@@ -123,41 +152,41 @@ class ApplicationSubmission{
     }
 
     /**
-     * Get the value of resumeSubmission
+     * Get the value of resumesubmission
      */ 
-    public function getResumeSubmission()
+    public function getResumesubmission()
     {
-        return $this->resumeSubmission;
+        return $this->resumesubmission;
     }
 
     /**
-     * Set the value of resumeSubmission
+     * Set the value of resumesubmission
      *
      * @return  self
      */ 
-    public function setResumeSubmission($resumeSubmission)
+    public function setResumesubmission($resumesubmission)
     {
-        $this->resumeSubmission = $resumeSubmission;
+        $this->resumesubmission = $resumesubmission;
 
         return $this;
     }
 
     /**
-     * Get the value of coverLetterSubmission
+     * Get the value of coverlettersubmission
      */ 
-    public function getCoverLetterSubmission()
+    public function getCoverlettersubmission()
     {
-        return $this->coverLetterSubmission;
+        return $this->coverlettersubmission;
     }
 
     /**
-     * Set the value of coverLetterSubmission
+     * Set the value of coverlettersubmission
      *
      * @return  self
      */ 
-    public function setCoverLetterSubmission($coverLetterSubmission)
+    public function setCoverlettersubmission($coverlettersubmission)
     {
-        $this->coverLetterSubmission = $coverLetterSubmission;
+        $this->coverlettersubmission = $coverlettersubmission;
 
         return $this;
     }
@@ -183,61 +212,44 @@ class ApplicationSubmission{
     }
 
     /**
-     * Get the value of linkToJobPosting
+     * Get the value of linktojobposting
      */ 
-    public function getLinkToJobPosting()
+    public function getLinktojobposting()
     {
-        return $this->linkToJobPosting;
+        return $this->linktojobposting;
     }
 
     /**
-     * Set the value of linkToJobPosting
+     * Set the value of linktojobposting
      *
      * @return  self
      */ 
-    public function setLinkToJobPosting($linkToJobPosting)
+    public function setLinktojobposting($linktojobposting)
     {
-        $this->linkToJobPosting = $linkToJobPosting;
+        $this->linktojobposting = $linktojobposting;
 
         return $this;
     }
 
     /**
-     * Get the value of applicationStatusId
+     * Get the value of applicationstatus
      */ 
-    public function getApplicationStatusId()
+    public function getApplicationstatus()
     {
-        return $this->applicationStatusId;
+        return $this->applicationstatus;
     }
 
     /**
-     * Set the value of applicationStatusId
+     * Set the value of applicationstatus
      *
      * @return  self
      */ 
-    public function setApplicationStatusId($applicationStatusId)
+    public function setApplicationstatus($applicationstatus)
     {
-        $this->applicationStatusId = $applicationStatusId;
+        $this->applicationstatus = $applicationstatus;
 
         return $this;
     }
-}
-
-function getAllAppSubmissions($db){
-    $sql = "SELECT t1.id,t3.companyname as company, t1.jobtitle, t1.salaryrequested, t1.submissiondate, t1.resumesubmission, t1.coverlettersubmission, t1.notes, t1.linktojobposting, t2.status as status FROM application_submissions t1 JOIN application_status t2 ON t1.applicationstatusid = t2.id JOIN company t3 ON t1.companyid = t3.id";
-    $statement = $db->prepare($sql);
-    $statement->execute();
-    return $statement->fetchAll();
-}
-
-function getSubmissionById($db,$id){
-    $sql = "SELECT t1.id,t3.companyname as company, t1.jobtitle, t1.salaryrequested, t1.submissiondate, t1.resumesubmission, t1.coverlettersubmission, t1.notes, t1.linktojobposting, t2.status as status FROM application_submissions t1 JOIN application_status t2 ON t1.applicationstatusid = t2.id JOIN company t3 ON t1.companyid = t3.id WHERE t1.id = :id";
-    $statement = $db->prepare($sql);
-    $statement->bindParam(':id',$id);
-    $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_CLASS,"ApplicationSubmission");
-    var_dump($result);
-    return $result;
 }
 
 ?>
