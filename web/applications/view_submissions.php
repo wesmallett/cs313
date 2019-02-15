@@ -12,10 +12,12 @@ $db = get_db();
         <script>
             $(document).ready(function(){
                 $('#view_overview').click(function(){
-                var submissionId = $(this).val();
-                var url = 'submission_overview.php',
-                data =  {'id': submissionId};
-                $.post(url, data);
+                    $.ajax({url: 'submission_overview.php',
+                    data:{'id': submissionId},
+                    type: 'post',
+                    success: function(output)
+                        alert(output);
+                    })
                 });
             });
         </script>
