@@ -6,7 +6,7 @@ class ApplicationSubmission{
     var $company;
     var $jobtitle;
     var $salaryrequested;
-    var $submissionDate;
+    var $submissiondate;
     var $lastContactId;
     var $resumesubmission;
     var $coverlettersubmission;
@@ -97,7 +97,7 @@ class ApplicationSubmission{
     /**
      * Get the value of submissionDate
      */ 
-    public function getSubmissionDate()
+    public function getSubmissiondate()
     {
         return $this->submissionDate;
     }
@@ -107,7 +107,7 @@ class ApplicationSubmission{
      *
      * @return  self
      */ 
-    public function setSubmissionDate($submissionDate)
+    public function setSubmissiondate($submissionDate)
     {
         $this->submissionDate = $submissionDate;
 
