@@ -23,7 +23,6 @@ $db = get_db();
         <th>Position</th>
         <th>Submission Date</th>
         <th>Requested Salary</th>
-        <th>Last Contact Date</th>
         <th>Link to Job</th>
     </tr>
     <?php
@@ -31,8 +30,8 @@ $db = get_db();
     foreach($submissions as $submission){
         ?>
         <tr>
-        <td><?=$submission['applicationstatusid']?></td>
-        <td><?=$submission['companyid']?></td>
+        <td><?=$submission['status']?></td>
+        <td><?=$submission['company']?></td>
         <td><?=$submission['jobtitle']?></td>
         <td><?=$submission['submissiondate']?></td>
         <td><?=$submission['salaryrequested']?></td>
