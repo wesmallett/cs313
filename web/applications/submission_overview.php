@@ -2,11 +2,6 @@
 require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 $db = get_db();
-
-if(!isempty($_POST['id'])){
-    $submission = getAppSubmission($db,$_POST['id']);
-    echo $submission;
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +11,6 @@ if(!isempty($_POST['id'])){
     </head>
 
     <body>
-       <?php echo $submission;?>
+       <?php echo $_POST['submissionId'];?>
     </body>
 </html>
