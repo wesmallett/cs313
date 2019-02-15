@@ -18,7 +18,7 @@ $db = get_db();
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
        
        foreach($submission as $applicationSubmission){
-           echo $applicationSubmission->getCompany();
+           echo $applicationSubmission->getJobtitle();
        }
        ?>
        <h1><?=$submission['company']?></h1>
