@@ -11,7 +11,7 @@ $db = get_db();
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function(){
-                $('#view_overview').click(function(){
+                $('.view_overview').click(function(){
                     $.ajax({
                     data:{'id': $(this).val()},
                     type: 'post',
@@ -25,12 +25,6 @@ $db = get_db();
     </head>
 
     <body>
-    <?php
-    if( isset($_POST['id']) ){
-        echo $_POST['id'];
-        exit;
-}
-?>
     <?php include_once '../navbar.php'?>
     <h1>Application Submissions</h1>
     <form action="addSubmission.php">
@@ -51,7 +45,10 @@ $db = get_db();
     foreach($submissions as $submission){
         ?>
         <tr>
-        <td><input type="submit" id="view_overview" name="insert" value="<?=$submission['id']?>" /></td>
+        <td><form action="submission_overview.php">
+        <input type="hidden" id=submissionId value="<?=$submission['id']?>"/>
+        <input type="submit" id="view_overview" name="insert" value="View" />
+        </form></td>
         <td><?=$submission['status']?></td>
         <td><?=$submission['company']?></td>
         <td><?=$submission['jobtitle']?></td>
