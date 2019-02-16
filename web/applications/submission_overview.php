@@ -32,7 +32,7 @@ $db = get_db();
        <label>Notes</label><?=$submission->getNotes()?>
        <form action='edit_submission.php' method="POST">
        <input type="hidden" name=submission value=<?=$submission?> />
-       <input type='Submit' value='Edit Submission'/>
+       <input type='submit' value='Edit Submission'/>
        </form>
     </body>
 </html>
