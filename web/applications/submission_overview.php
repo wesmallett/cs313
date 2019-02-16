@@ -16,7 +16,6 @@ $db = get_db();
     <body>
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
-       echo $submission->getJobtitle();
        ?>
        <label>Job Title</label><?=$submission->getJobtitle()?>
        <label>Company</label><?=$submission->getCompany()?>
