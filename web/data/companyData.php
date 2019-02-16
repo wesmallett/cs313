@@ -23,12 +23,11 @@ function getCompanyByName($db,$companyName){
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_CLASS,"Company");
     $company = $result[0];
-    var_dump($company);
     return $company;
 }
 
 function insertCompany($db,$company){
-    $sql = "INSERT INTO company (companyname,streedaddress,city,state,zipcode,companywebsite,notes,pointofcontact,phonenumber,email)
+    $sql = "INSERT INTO company (companyname,streetaddress,city,state,zipcode,companywebsite,notes,pointofcontact,phonenumber,email)
                 VALUES (:name,:address,:city,:state,:zip,:site,:notes,:poc,:phone,:email)";
     $statement = $db->prepare($sql);
     $statement->bindParam(':name',$company->getName());
