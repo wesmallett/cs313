@@ -30,9 +30,9 @@ $db = get_db();
        <?=$company->getPhonenumber()?>
        <label>Salary Requested</label><?=$submission->getSalaryrequested()?>
        <label>Notes</label><?=$submission->getNotes()?>
-       <form action='edit_submission.php' method="POST">
-       <input type="hidden" name=submission value=<?=$submission?> />
-       <input type="submit" name="edit" value='Edit Submission'/>
+       <form action="edit_submission.php" method="POST">
+            <input type="hidden" name=submission value=<?=$submission?> />
+            <input type="submit" name="edit" value='Edit Submission'/>
        </form>
     </body>
 </html>
