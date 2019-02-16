@@ -19,8 +19,8 @@ $db = get_db();
        ?>
        <label>Job Title</label><?=$submission->getJobtitle()?>
        <label>Company</label><?=$submission->getCompany()?>
-       <?= $company1 = getCompanyByName($db,$submission->getCompany());
-       echo $company1 ?>
+       <?= $name = $submission->getCompany();
+       $company = getCompanyByName($db,$name);?>
        <?=$company->getStreetaddress()?>
        <?=$company->getCity()?>
        <?=$company->getState()?>
