@@ -16,7 +16,6 @@ $db = get_db();
     <body>
        <?php 
        $company = getCompanyById($db,intval($_POST['companyId']));
-       var_dump($company);
        ?>
        <form action="update_company.php" method="POST">
             <label>Company</label><input type='text' name='name' value="<?=$company->getCompanyname()?>"/>
@@ -47,7 +46,7 @@ $db = get_db();
 
             updateCompany($db, $company);
 
-            //header("Location: view_company.php");
+            header("Location: view_company.php");
             exit();
         }        
 
