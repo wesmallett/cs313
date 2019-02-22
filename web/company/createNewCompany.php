@@ -52,15 +52,15 @@ $db = get_db();
 
         }else{
             $company = new Company();
-            $company->setName($_POST['name']);
+            $company->setCompanyname($_POST['name']);
             $company->setStreetaddress($_POST['street-address']);
             $company->setCity($_POST['city']);
             $company->setState($_POST['state']);
-            $company->setZip($_POST['zip']);
-            $company->setWebsite($_POST['site']);
+            $company->setZipcode($_POST['zip']);
+            $company->setCompanywebsite($_POST['site']);
             $company->setNotes($_POST['notes']);
-            $company->setPointOfContact($_POST['contact']);
-            $company->setPhoneNumber($_POST['phone-number']);
+            $company->setPointofcontact($_POST['contact']);
+            $company->setPhonenumber($_POST['phone-number']);
             $company->setEmail($_POST['email']);
 
             insertCompany($db, $company);
