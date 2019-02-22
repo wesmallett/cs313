@@ -46,7 +46,7 @@ $db = get_db();
 
             updateCompany($db, $company);
 
-            header("Location: view_company.php");
+            //header("Location: view_company.php");
             exit();
         }        
 
