@@ -2,7 +2,9 @@
 require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 require "../data/companyData.php";
+require "../data/applicationSubmissionData.php";
 include_once "../models/company.php";
+include_once "../models/applicationSubmission.php";
 
 $db = get_db();
 ?>
@@ -29,5 +31,11 @@ $db = get_db();
        <?=$company->getPointofcontact()?>
        <?=$company->getEmail()?>
        <?=$company->getPhonenumber()?>
+
+        <?= $companySubmissions = getSubmissionsByCompany($db, intval($_POST['companyId']));
+        foreach($companySubmissions as $submission){
+            $submission->getJobtitle();
+        }
+
     </body>
 </html>

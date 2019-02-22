@@ -17,6 +17,33 @@ $db = get_db();
        <?php 
        $company = getCompanyById($db,intval($_POST['companyId']));
        ?>
-       <label>Company</label><input type='text' id='company' value=<?=$company->getCompanyname()?> />
+       <form action="update_company.php" method="POST">
+            <label>Company</label><input type='text' id='company' value=<?=$company->getCompanyname()?> />
+            <input type='submit' name='save' value='Save'/>
+        </form>
     </body>
+
+    <?php
+        if(empty($_POST)){
+
+        }else{
+            $company = new Company();
+            $company->setName($_POST['name']);
+            $company->setStreetaddress($_POST['street-address']);
+            $company->setCity($_POST['city']);
+            $company->setState($_POST['state']);
+            $company->setZipcode($_POST['zip']);
+            $company->setCompanywebsite($_POST['site']);
+            $company->setNotes($_POST['notes']);
+            $company->setPointofcontact($_POST['contact']);
+            $company->setPhonenumber($_POST['phone-number']);
+            $company->setEmail($_POST['email']);
+
+            insertCompany($db, $company);
+
+            header("Location: view_company.php");
+            exit();
+        }        
+
+        ?>
 </html>

@@ -28,19 +28,37 @@ function getCompanyByName($db,$companyName){
     return $company;
 }
 
+function updateCompany($db, $company){
+    $sql = "UPDATE company SET companyname = :companyname, streetaddress = :streetaddress, city = :city, state = :state, zipcode = :zipcode, companywebsite = :companywebsite
+            notes = :notes, pointofcontact = :pointofcontact, phonenumber = :phonenumber, email = :email where id = :id";
+    $statement = $db->prepare($sql);
+    $statement->bindParam(':companyname',$company->getCompanyname());
+    $statement->bindParam(':streetaddress',$company->getStreetaddress());
+    $statement->bindParam(':city',$company->getCity());
+    $statement->bindParam(':state',$company->getState());
+    $statement->bindParam(':zipcode',$company->getZipcode());
+    $statement->bindParam(':companywebsite',$company->getCompanywebsite());
+    $statement->bindParam(':notes',$company->getNotes());
+    $statement->bindParam(':pointofcontact',$company->getPointofcontact());
+    $statement->bindParam(':phonenumber',$company->getPhonenumber());
+    $statement->bindParam(':email',$company->getEmail());
+    $statement->bindParam(':id',$company->getId());
+    $statement->execute();
+}
+
 function insertCompany($db,$company){
     $sql = "INSERT INTO company (companyname,streetaddress,city,state,zipcode,companywebsite,notes,pointofcontact,phonenumber,email)
                 VALUES (:name,:address,:city,:state,:zip,:site,:notes,:poc,:phone,:email)";
     $statement = $db->prepare($sql);
-    $statement->bindParam(':name',$company->getName());
+    $statement->bindParam(':name',$company->getCompanyname());
     $statement->bindParam(':address',$company->getStreetaddress());
     $statement->bindParam(':city',$company->getCity());
     $statement->bindParam(':state',$company->getState());
-    $statement->bindParam(':zip',$company->getZip());
-    $statement->bindParam(':site',$company->getWebsite());
+    $statement->bindParam(':zip',$company->getZipcode());
+    $statement->bindParam(':site',$company->getCompanywebsite());
     $statement->bindParam(':notes',$company->getNotes());
-    $statement->bindParam(':poc',$company->getPointOfContact());
-    $statement->bindParam(':phone',$company->getPhoneNumber());
+    $statement->bindParam(':poc',$company->getPointofcontact());
+    $statement->bindParam(':phone',$company->getPhonenumber());
     $statement->bindParam(':email',$company->getEmail());
     $statement->execute();
             

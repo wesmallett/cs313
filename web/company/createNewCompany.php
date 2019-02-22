@@ -60,7 +60,7 @@ $db = get_db();
             $company->setWebsite($_POST['site']);
             $company->setNotes($_POST['notes']);
             $company->setPointOfContact($_POST['contact']);
-            $company->setPhoneNumber($_POST['phont-number']);
+            $company->setPhoneNumber($_POST['phone-number']);
             $company->setEmail($_POST['email']);
 
             insertCompany($db, $company);
