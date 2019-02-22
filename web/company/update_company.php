@@ -18,12 +18,12 @@ $db = get_db();
        $company = getCompanyById($db,intval($_POST['companyId']));
        ?>
        <form action="update_company.php" method="GET">
-            <label>Company</label><input type='text' name='name' value="<?=$company->getCompanyname()?>"/>
-            <label>Address</label><input type='text' name='street-address' value="<?=$company->getStreetaddress()?>" />
-            <label>City</label><input type='text' name='city' value="<?=$company->getCity()?>" />
-            <label>State</label><input type='text' name='state' value="<?=$company->getState()?>" />
-            <label>Zip</label><input type='text' name='zipcode' value="<?=$company->getZipcode()?>" />
-            <label>Notes</label><input type='text' name='notes' value="<?=$company->getNotes()?>" />
+            <label>Company</label><input type='text' name='name' value="<?=$company->getCompanyname();?>"/>
+            <label>Address</label><input type='text' name='street-address' value="<?=$company->getStreetaddress();?>" />
+            <label>City</label><input type='text' name='city' value="<?=$company->getCity();?>" />
+            <label>State</label><input type='text' name='state' value="<?=$company->getState();?>" />
+            <label>Zip</label><input type='text' name='zipcode' value="<?=$company->getZipcode();?>" />
+            <label>Notes</label><input type='text' name='notes' value="<?=$company->getNotes();?>" />
             <input type='submit' name='save' value='Save'/>
         </form>
     </body>
@@ -32,9 +32,7 @@ $db = get_db();
         if(empty($_GET)){
 
         }else{
-            if($_GET['name']==null){
-                echo "A Company Name is Required";
-            }else{
+            if($_GET['name']!=null){
                 $company = new Company();
                 $company->setCompanyname($_GET['name']);
                 $company->setStreetaddress($_GET['street-address']);
@@ -51,6 +49,8 @@ $db = get_db();
     
                 header("Location: view_company.php");
                 exit();
+            }else{
+                echo "A Company Name is Required";
             }
         }        
 
