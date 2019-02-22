@@ -1,3 +1,11 @@
+<?php
+require_once "../resources/dbConnect.php";
+require "../data/applicationSubmissionData.php";
+require "../data/companyData.php";
+include_once "../models/applicationSubmission.php";
+
+$db = get_db();
+?>
 <!DOCTYPE html>
 <html>
     <head>
