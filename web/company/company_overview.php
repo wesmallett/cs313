@@ -17,8 +17,8 @@ $db = get_db();
        <?php 
        $company = getCompanyById($db,intval($_POST['companyId']));
        ?>
-        <form action="edit_submission.php" method="POST">
-            <input type="hidden" name="company" value=<?= $_POST['companyId']?> />
+        <form action="update_company.php" method="POST">
+            <input type="hidden" name="companyId" value=<?= $_POST['companyId']?> />
             <input type="submit" name="edit" value='Edit Company'/>
        </form>
        <?=$company->getCompanyname()?>
