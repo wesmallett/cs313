@@ -18,7 +18,7 @@ $db = get_db();
        $company = getCompanyById($db,intval($_POST['companyId']));
        ?>
        <form action="update_company.php" method="POST">
-            <label>Company</label><input type='text' id='company' value=<?=$company->getCompanyname()?> />
+            <label>Company</label><input type='text' name='company' value=<?=$company->getCompanyname()?> />
             <input type='submit' name='save' value='Save'/>
         </form>
     </body>
@@ -39,7 +39,7 @@ $db = get_db();
             $company->setPhonenumber($_POST['phone-number']);
             $company->setEmail($_POST['email']);
 
-            insertCompany($db, $company);
+            updateCompany($db, $company);
 
             header("Location: view_company.php");
             exit();
