@@ -15,6 +15,7 @@ $db = get_db();
         <script>
             $("#edit-submission").click(function(){
                 var jsonData = <?= print json_encode($submission); ?>;
+                alert(jsonData);
                 $.ajax({ url: 'edit_submission.php',
                     data: {submission: jsonData},
                     type: 'post',
