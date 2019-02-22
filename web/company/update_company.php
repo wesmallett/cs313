@@ -16,7 +16,7 @@ $db = get_db();
     <body>
        <?php 
        $company = getCompanyById($db,intval($_POST['companyId']));
-       echo $company->getCompanyname();
+       var_dump($company->getCompanyname());
        ?>
        <form action="update_company.php" method="GET">
             <label>Company</label><input type='text' name='name' value="<?=$company->getCompanyname();?>"/>
@@ -34,6 +34,7 @@ $db = get_db();
 
         }else{
             if($_GET['name']!=null){
+                var_dump($_GET['name']);
                 $company = new Company();
                 $company->setCompanyname($_GET['name']);
                 $company->setStreetaddress($_GET['street-address']);
