@@ -37,6 +37,7 @@ $db = get_db();
         }else{
             foreach($companySubmissions as $submission){
                 echo $submission->getJobtitle();
+                echo $submission->getApplicationstatus();
             }
         }
         ?>
