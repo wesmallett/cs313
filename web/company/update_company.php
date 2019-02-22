@@ -19,6 +19,11 @@ $db = get_db();
        ?>
        <form action="update_company.php" method="POST">
             <label>Company</label><input type='text' name='company' value=<?=$company->getCompanyname()?> />
+            <label>Address</label><input type='text' name='street-address' value=<?=$company->getStreetaddress()?> />
+            <label>City</label><input type='text' name='city' value=<?=$company->getCity()?> />
+            <label>State</label><input type='text' name='state' value=<?=$company->getState()?> />
+            <label>Zip</label><input type='text' name='zipcode' value=<?=$company->getZipcode()?> />
+            <label>Notes</label><input type='text' name='notes' value=<?=$company->getNotes()?> />
             <input type='submit' name='save' value='Save'/>
         </form>
     </body>
@@ -35,9 +40,9 @@ $db = get_db();
             $company->setZipcode($_POST['zip']);
             $company->setCompanywebsite($_POST['site']);
             $company->setNotes($_POST['notes']);
-            $company->setPointofcontact($_POST['contact']);
-            $company->setPhonenumber($_POST['phone-number']);
-            $company->setEmail($_POST['email']);
+            // $company->setPointofcontact($_POST['contact']);
+            // $company->setPhonenumber($_POST['phone-number']);
+            // $company->setEmail($_POST['email']);
 
             updateCompany($db, $company);
 
