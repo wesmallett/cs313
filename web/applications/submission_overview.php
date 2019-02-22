@@ -12,7 +12,7 @@ $db = get_db();
         <title>Application Submissions</title>
         <link rel="stylesheet" href="../stylings.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script>
+        <!-- <script>
         $(document).ready(function() {
             $("#edit-submission").click(function(){
                 var jsonData = <?php print json_encode($submission); ?>;
@@ -26,15 +26,15 @@ $db = get_db();
                 });
             });
         });
-        </script>
+        </script> -->
     </head>
 
     <body>
        <?php 
        $submission = getSubmissionById($db,intval($_GET['submissionId']));
        ?>
-       <button id='edit-submission'>Edit Submission</button>
         <form action="edit_submission.php" method="POST">
+            <input type="hidden" name="submission" value=<?= $_GET['submissionId']?> />
             <input type="submit" name="edit" value='Edit Submission'/>
        </form>
        <label>Job Title</label><?=$submission->getJobtitle()?>
