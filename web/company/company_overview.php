@@ -34,8 +34,9 @@ $db = get_db();
 
         <?= $companySubmissions = getSubmissionsByCompany($db, intval($_POST['companyId']));
         foreach($companySubmissions as $submission){
-            $submission->getJobtitle();
+            echo $submission->getJobtitle();
         }
+        ?>
 
     </body>
 </html>
