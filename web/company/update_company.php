@@ -17,7 +17,7 @@ $db = get_db();
        <?php 
        $company = getCompanyById($db,intval($_POST['companyId']));
        ?>
-       <form action="update_company.php" method="POST">
+       <form action="update_company.php" method="GET">
             <label>Company</label><input type='text' name='name' value="<?=$company->getCompanyname()?>"/>
             <label>Address</label><input type='text' name='street-address' value="<?=$company->getStreetaddress()?>" />
             <label>City</label><input type='text' name='city' value="<?=$company->getCity()?>" />
@@ -29,17 +29,17 @@ $db = get_db();
     </body>
 
     <?php
-        if(empty($_POST)){
+        if(empty($_GET)){
 
         }else{
             $company = new Company();
-            $company->setCompanyname($_POST['name']);
-            $company->setStreetaddress($_POST['street-address']);
-            $company->setCity($_POST['city']);
-            $company->setState($_POST['state']);
-            $company->setZipcode($_POST['zip']);
-            $company->setCompanywebsite($_POST['site']);
-            $company->setNotes($_POST['notes']);
+            $company->setCompanyname($_GET['name']);
+            $company->setStreetaddress($_GET['street-address']);
+            $company->setCity($_GET['city']);
+            $company->setState($_GET['state']);
+            $company->setZipcode($_GET['zip']);
+            $company->setCompanywebsite($_GET['site']);
+            $company->setNotes($_GET['notes']);
             // $company->setPointofcontact($_POST['contact']);
             // $company->setPhonenumber($_POST['phone-number']);
             // $company->setEmail($_POST['email']);
