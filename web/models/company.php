@@ -18,7 +18,7 @@ class Company{
      */ 
     public function getCompanyname()
     {
-        return $this->$companyname;
+        return $this->companyname;
     }
 
     /**
