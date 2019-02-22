@@ -32,22 +32,26 @@ $db = get_db();
         if(empty($_GET)){
 
         }else{
-            $company = new Company();
-            $company->setCompanyname($_GET['name']);
-            $company->setStreetaddress($_GET['street-address']);
-            $company->setCity($_GET['city']);
-            $company->setState($_GET['state']);
-            $company->setZipcode($_GET['zip']);
-            $company->setCompanywebsite($_GET['site']);
-            $company->setNotes($_GET['notes']);
-            // $company->setPointofcontact($_POST['contact']);
-            // $company->setPhonenumber($_POST['phone-number']);
-            // $company->setEmail($_POST['email']);
-
-            updateCompany($db, $company);
-
-            header("Location: view_company.php");
-            exit();
+            if($_GET['name']==null){
+                echo "A Company Name is Required";
+            }else{
+                $company = new Company();
+                $company->setCompanyname($_GET['name']);
+                $company->setStreetaddress($_GET['street-address']);
+                $company->setCity($_GET['city']);
+                $company->setState($_GET['state']);
+                $company->setZipcode($_GET['zip']);
+                $company->setCompanywebsite($_GET['site']);
+                $company->setNotes($_GET['notes']);
+                // $company->setPointofcontact($_POST['contact']);
+                // $company->setPhonenumber($_POST['phone-number']);
+                // $company->setEmail($_POST['email']);
+    
+                updateCompany($db, $company);
+    
+                header("Location: view_company.php");
+                exit();
+            }
         }        
 
         ?>
