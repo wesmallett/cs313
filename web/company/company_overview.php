@@ -32,6 +32,7 @@ $db = get_db();
        <?=$company->getPhonenumber()?>
 
         <?= $companySubmissions = getSubmissionsByCompany($db, intval($_POST['companyId']));
+        var_dump($companySubmissions);
         foreach($companySubmissions as $submission){
             echo $submission->getJobtitle();
         }
