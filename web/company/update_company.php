@@ -45,6 +45,7 @@ $db = get_db();
                 // $company->setPhonenumber($_POST['phone-number']);
                 // $company->setEmail($_POST['email']);
     
+                var_dump($company);
                 updateCompany($db, $company);
     
                 header("Location: view_company.php");
