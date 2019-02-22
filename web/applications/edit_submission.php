@@ -16,7 +16,7 @@ $db = get_db();
     <body>
        <?php 
        $submission = getSubmissionById($db,intval($_POST['submission']));
-       echo $submission->getJobtitle();
        ?>
+       <label>Job Title</label><input type='text' value=<?=$submission->getJobtitle()?> />
     </body>
 </html>
