@@ -18,6 +18,7 @@ $db = get_db();
     </form>
     <table>
     <tr>
+        <th></th>
         <th>Name</th>
         <th>Address</th>
         <th>Point of Contact</th>
@@ -30,6 +31,10 @@ $db = get_db();
     foreach($companies as $company){
         ?>
         <tr>
+        <td><form action="company_overview.php" method="POST">
+        <input type="hidden" name=companyId value=<?=$company['id']?> />
+        <input type="submit" id="view_company_overview" name="view" value="View" />
+        </form></td>
         <td><?=$company['companyname']?></td>
         <td><?=$company['streedaddress']." ".$company['city'].", ".$company['state']." ".$company['zipcode']?></td>
         <td><?=$company['pointofcontact']?></td>

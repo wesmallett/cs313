@@ -13,7 +13,9 @@ function getCompanyById($db,$id){
     $statement = $db->prepare($sql);
     $statement->bindParam(':id',$id);
     $statement->execute();
-    return $statement->fetchAll();
+    $result = $statement->fetchAll(PDO::FETCH_CLASS,"Company");
+    $company = $result[0];
+    return $company;
 }
 
 function getCompanyByName($db,$companyName){

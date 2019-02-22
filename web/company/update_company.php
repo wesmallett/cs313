@@ -2,7 +2,7 @@
 require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 require "../data/companyData.php";
-include_once "../models/applicationSubmission.php";
+include_once "../models/company.php";
 
 $db = get_db();
 ?>
@@ -15,7 +15,7 @@ $db = get_db();
 
     <body>
        <?php 
-       $submission = getSubmissionById($db,intval($_POST['submission']));
+       $submission = getCompanyById($db,intval($_POST['companyId']));
        ?>
        <label>Job Title</label><input type='text' id='job-title' value=<?=$submission->getJobtitle()?> />
        <label>Company</label><input type='text' id='company' value=<?=$submission->getJobtitle()?> />
