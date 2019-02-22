@@ -13,6 +13,7 @@ $db = get_db();
         <link rel="stylesheet" href="../stylings.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script>
+        $(document).ready(function() {
             $("#edit-submission").click(function(){
                 var jsonData = <?= print json_encode($submission); ?>;
                 alert(jsonData);
@@ -24,6 +25,7 @@ $db = get_db();
                     }
                 });
             });
+        });
         </script>
     </head>
 
