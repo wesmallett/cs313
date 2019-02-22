@@ -29,7 +29,7 @@ function getCompanyByName($db,$companyName){
 }
 
 function updateCompany($db, $company){
-    $sql = "UPDATE company SET companyname = :companyname, streetaddress = :streetaddress, city = :city, state = :state, zipcode = :zipcode, companywebsite = :companywebsite
+    $sql = "UPDATE company SET companyname = :companyname, streetaddress = :streetaddress, city = :city, state = :state, zipcode = :zipcode, companywebsite = :companywebsite,
             notes = :notes, pointofcontact = :pointofcontact, phonenumber = :phonenumber, email = :email where id = :id";
     $statement = $db->prepare($sql);
     $statement->bindParam(':companyname',$company->getCompanyname());
