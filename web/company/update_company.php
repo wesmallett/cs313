@@ -28,7 +28,7 @@ $db = get_db();
 
         }else{
             $company = new Company();
-            $company->setName($_POST['name']);
+            $company->setCompanyname($_POST['name']);
             $company->setStreetaddress($_POST['street-address']);
             $company->setCity($_POST['city']);
             $company->setState($_POST['state']);
