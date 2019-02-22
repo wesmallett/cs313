@@ -2,7 +2,6 @@
 require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 require "../data/companyData.php";
-require "../data/applicationSubmissionData.php";
 include_once "../models/company.php";
 include_once "../models/applicationSubmission.php";
 
