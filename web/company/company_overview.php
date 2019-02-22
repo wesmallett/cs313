@@ -32,9 +32,12 @@ $db = get_db();
        <?=$company->getPhonenumber()?>
 
         <?= $companySubmissions = getSubmissionsByCompany($db, intval($_POST['companyId']));
-        var_dump($companySubmissions);
-        foreach($companySubmissions as $submission){
-            echo $submission->getJobtitle();
+        if(sizeof($companySubmissions) > 1){
+            echo "You have not applied for any positions.";
+        }else{
+            foreach($companySubmissions as $submission){
+                echo $submission->getJobtitle();
+            }
         }
         ?>
 
