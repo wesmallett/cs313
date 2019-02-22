@@ -7,7 +7,8 @@
 
     <body>
        <?php 
-       echo $_POST['submission'];
+       $submission = getSubmissionById($db,intval($_POST['submission']));
+       echo $submission->getJobtitle();
        ?>
     </body>
 </html>
