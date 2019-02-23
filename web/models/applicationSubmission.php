@@ -95,46 +95,6 @@ class ApplicationSubmission{
     }
 
     /**
-     * Get the value of submissionDate
-     */ 
-    public function getSubmissiondate()
-    {
-        return $this->submissionDate;
-    }
-
-    /**
-     * Set the value of submissionDate
-     *
-     * @return  self
-     */ 
-    public function setSubmissiondate($submissionDate)
-    {
-        $this->submissionDate = $submissionDate;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of lastContactId
-     */ 
-    public function getLastContactId()
-    {
-        return $this->lastContactId;
-    }
-
-    /**
-     * Set the value of lastContactId
-     *
-     * @return  self
-     */ 
-    public function setLastContactId($lastContactId)
-    {
-        $this->lastContactId = $lastContactId;
-
-        return $this;
-    }
-
-    /**
      * Get the value of resumesubmission
      */ 
     public function getResumesubmission()
@@ -195,26 +155,6 @@ class ApplicationSubmission{
     }
 
     /**
-     * Get the value of linktojobposting
-     */ 
-    public function getLinktojobposting()
-    {
-        return $this->linktojobposting;
-    }
-
-    /**
-     * Set the value of linktojobposting
-     *
-     * @return  self
-     */ 
-    public function setLinktojobposting($linktojobposting)
-    {
-        $this->linktojobposting = $linktojobposting;
-
-        return $this;
-    }
-
-    /**
      * Get the value of applicationstatus
      */ 
     public function getApplicationstatus()
@@ -270,6 +210,66 @@ class ApplicationSubmission{
     public function setApplicationstatusid($applicationstatusid)
     {
         $this->applicationstatusid = $applicationstatusid;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of submissiondate
+     */ 
+    public function getSubmissiondate()
+    {
+        return $this->submissiondate;
+    }
+
+    /**
+     * Set the value of submissiondate
+     *
+     * @return  self
+     */ 
+    public function setSubmissiondate($submissiondate)
+    {
+        $this->submissiondate = $submissiondate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of linktojobposting
+     */ 
+    public function getLinktojobposting()
+    {
+        return $this->linktojobposting;
+    }
+
+    /**
+     * Set the value of linktojobposting
+     *
+     * @return  self
+     */ 
+    public function setLinktojobposting($linktojobposting)
+    {
+        $this->linktojobposting = $linktojobposting;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lastContactId
+     */ 
+    public function getLastContactId()
+    {
+        return $this->lastContactId;
+    }
+
+    /**
+     * Set the value of lastContactId
+     *
+     * @return  self
+     */ 
+    public function setLastContactId($lastContactId)
+    {
+        $this->lastContactId = $lastContactId;
 
         return $this;
     }
