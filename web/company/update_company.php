@@ -37,7 +37,7 @@ $db = get_db();
 
         }else{
             if($_GET['name']!=null){
-                error_log("Attempting to call Update", 0);
+                error_log("Attempting to call Update");
                 $company->setCompanyname($_GET['name']);
                 $company->setStreetaddress($_GET['street-address']);
                 $company->setCity($_GET['city']);

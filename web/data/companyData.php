@@ -29,7 +29,7 @@ function getCompanyByName($db,$companyName){
 }
 
 function updateCompany($db, $company){
-    error_log("Update Called!", 0);
+    error_log("Update Called!");
     $sql = "UPDATE company SET companyname = :companyname, streetaddress = :streetaddress, city = :city, state = :state, zipcode = :zipcode, companywebsite = :companywebsite,
             notes = :notes, pointofcontact = :pointofcontact, phonenumber = :phonenumber, email = :email where id = :id";
     $statement = $db->prepare($sql);
@@ -45,9 +45,9 @@ function updateCompany($db, $company){
     $statement->bindParam(':email',$company->getEmail());
     $statement->bindParam(':id',$company->getId());
     if($statement->execute()){
-        error_log("Row Updated!", 0);
+        error_log("Row Updated!");
     }else{
-        error_log("Row not updated!", 0);
+        error_log("Row not updated!");
     }
 }
 
