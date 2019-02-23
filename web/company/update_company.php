@@ -16,7 +16,7 @@ $db = get_db();
     <body>
        <?php 
        $company = getCompanyById($db,intval($_POST['companyId']));
-       echo "<h1>COMPANY</h1>";
+       echo "<h1>". $company->getCompanyname()."</h1>";
        ?>
        <form action="update_company.php" method="GET">
             <label>Company</label><input type='text' name='name' value="<?= $company->getCompanyname();?>"/>
