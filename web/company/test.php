@@ -12,7 +12,6 @@ $db = get_db();
             if($_GET['name']!=null){
                 error_log("saving");
                 $company = new Company();
-                $company->setId(intval($_GET['id']));
                 $company->setCompanyname($_GET['name']);
                 $company->setStreetaddress($_GET['street-address']);
                 $company->setCity($_GET['city']);
@@ -23,6 +22,7 @@ $db = get_db();
                 $company->setPointofcontact($_POST['poc']);
                 $company->setPhonenumber($_POST['phone']);
                 $company->setEmail($_POST['email']);
+                $company->setId(intval($_GET['id']));
 
                 updateCompany($db, $company);
                 error_log("success?");
