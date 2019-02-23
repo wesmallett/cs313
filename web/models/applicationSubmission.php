@@ -11,6 +11,8 @@ class ApplicationSubmission{
     var $notes;
     var $linktojobposting;
     var $applicationstatus;
+    var $companyid;
+    var $applicationstatusid;
 
     /**
      * Get the value of id
@@ -228,6 +230,46 @@ class ApplicationSubmission{
     public function setApplicationstatus($applicationstatus)
     {
         $this->applicationstatus = $applicationstatus;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of companyid
+     */ 
+    public function getCompanyid()
+    {
+        return $this->companyid;
+    }
+
+    /**
+     * Set the value of companyid
+     *
+     * @return  self
+     */ 
+    public function setCompanyid($companyid)
+    {
+        $this->companyid = $companyid;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of applicationstatusid
+     */ 
+    public function getApplicationstatusid()
+    {
+        return $this->applicationstatusid;
+    }
+
+    /**
+     * Set the value of applicationstatusid
+     *
+     * @return  self
+     */ 
+    public function setApplicationstatusid($applicationstatusid)
+    {
+        $this->applicationstatusid = $applicationstatusid;
 
         return $this;
     }

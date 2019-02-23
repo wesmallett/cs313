@@ -27,4 +27,20 @@ function getSubmissionsByCompany($db, $companyId){
     return $result;
 }
 
+function updateSubmission($db, $submission){
+    $sql = "UPDATE application_submissions SET companyid = :companyid, jobtitle = :jobtitle, salaryrequested = :salaryrequested, submissiondate = :submissiondate,
+    resumesubmission = :resume, covverlettersubmission = :coverletter, notes = :notes, linetojobposting = :linktojob, applicationstatusid = :statusid where id = :submissionId";
+    $statement = $db->prepare($sql);
+    $statement->bindParam(':companyId',$submission->getCompanyid());
+    $statement->bindParam(':jobtitle',$submission->getJobtitle());
+    $statement->bindParam(':salaryrequested',$submission->getRequestedsalary());
+    $statement->bindParam(':submissiondate',$submission->getSubmissiondate());
+    $statement->bindParam(':resume',$submission->getResumesubmission());
+    $statement->bindParam(':coverletter',$submission->getCoverlettersubmission());
+    $statement->bindParam(':notes',$submission->getNotes());
+    $statement->bindParam(':linktojob',$submission->getLinktojobposting());
+    $statement->bindParam(':statusid',$submission->getApplicationstatusid());
+    $statement->execute();
+}
+
 ?>

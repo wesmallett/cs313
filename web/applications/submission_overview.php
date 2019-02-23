@@ -3,7 +3,7 @@ require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 require "../data/companyData.php";
 include_once "../models/applicationSubmission.php";
-
+session_start();
 $db = get_db();
 ?>
 <!DOCTYPE html>
@@ -12,29 +12,17 @@ $db = get_db();
         <title>Application Submissions</title>
         <link rel="stylesheet" href="../stylings.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <!-- <script>
-        $(document).ready(function() {
-            $("#edit-submission").click(function(){
-                var jsonData = <?php print json_encode($submission); ?>;
-                alert(jsonData);
-                $.ajax({ url: 'edit_submission.php',
-                    data: {submission: jsonData},
-                    type: 'post',
-                    success: function(output) {
-                        alert(output);
-                    }
-                });
-            });
-        });
-        </script> -->
     </head>
 
     <body>
        <?php 
-       $submission = getSubmissionById($db,intval($_GET['submissionId']));
+       if($_POST['submissionId'] != null){
+            $_SESSION['submissionId'] = $_GET['submissionId'];
+        }
+       $submission = getSubmissionById($db,intval($_SESSION['submissionId']));
        ?>
         <form action="edit_submission.php" method="POST">
-            <input type="hidden" name="submission" value=<?= $_GET['submissionId']?> />
+            <input type="hidden" name="submission" value=<?= $_SESSION['submissionId']?> />
             <input type="submit" name="edit" value='Edit Submission'/>
        </form>
        <label>Job Title</label><?=$submission->getJobtitle()?>

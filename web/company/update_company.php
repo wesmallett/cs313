@@ -46,7 +46,6 @@ $db = get_db();
         if(!isset($_POST['name']) && !empty($_POST['save'])){
             echo "<script type='text/javascript'>invalidName();</script>";
         }else{
-            // $company = new Company();
             $company->setCompanyname($_POST['name']);
             $company->setStreetaddress($_POST['street-address']);
             $company->setCity($_POST['city']);
@@ -57,16 +56,11 @@ $db = get_db();
             $company->setPointofcontact($_POST['poc']);
             $company->setPhonenumber($_POST['phone']);
             $company->setEmail($_POST['email']);
-            // $company->setId(intval($_SESSION['companyId']));
 
-            if($company->getCompanyname() == null){
+            updateCompany($db, $company);
 
-            }else{
-                updateCompany($db, $company);
-
-                header("Location: company_overview.php");
-                exit();
-            }
+            header("Location: company_overview.php");
+            exit();
         }        
 
         ?>
