@@ -3,7 +3,7 @@ require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 require_once "../data/companyData.php";
 require_once "../models/company.php";
-
+session_start();
 $db = get_db();
         if(empty($_POST)){
 

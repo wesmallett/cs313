@@ -4,7 +4,7 @@ require "../data/applicationSubmissionData.php";
 require "../data/companyData.php";
 include_once "../models/company.php";
 include_once "../models/applicationSubmission.php";
-
+session_start();
 $db = get_db();
 ?>
 <!DOCTYPE html>
