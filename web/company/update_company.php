@@ -18,7 +18,7 @@ $db = get_db();
        $company = getCompanyById($db,intval($_POST['companyId']));
        ?>
        <form action="test.php" method="GET">
-            <input type='hidden' name='id' value="<?intval($_POST['companyId']);?>"/>
+            <input type='hidden' name='id' value=<?intval($_POST['companyId']);?>/>
             <label>Company</label><input type='text' name='name' value="<?= $company->getCompanyname();?>"/>
             <label>Address</label><input type='text' name='street-address' value="<?=$company->getStreetaddress();?>" />
             <label>City</label><input type='text' name='city' value="<?=$company->getCity();?>" />
