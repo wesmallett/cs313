@@ -11,6 +11,11 @@ $db = get_db();
     <head>
         <title>Application Submissions</title>
         <link rel="stylesheet" href="../stylings.css" type="text/css">
+        <script type='text/javascript'>
+            function invalidName(){
+                window.alert("A Name is Required to Save a Company.");
+            }
+        </script>
     </head>
 
     <body>
@@ -35,7 +40,7 @@ $db = get_db();
     <?php
         if(!isset($_POST['name']) && !empty($_POST['save'])){
             echo '<script type="text/javascript">',
-     'alert("A Name is Required to Save a Company.")',
+     'invalidName()',
      '</script>';
         }else{
             // $company = new Company();
