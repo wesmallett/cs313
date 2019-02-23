@@ -13,7 +13,7 @@ $db = get_db();
         <link rel="stylesheet" href="../stylings.css" type="text/css">
         <script type='text/javascript'>
             function invalidName(){
-                window.alert("A Name is Required to Save a Company.");
+                alert("A Name is Required to Save a Company.");
             }
         </script>
     </head>
