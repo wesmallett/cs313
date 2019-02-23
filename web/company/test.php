@@ -19,9 +19,9 @@ $db = get_db();
                 $company->setZipcode($_GET['zip']);
                 $company->setCompanywebsite($_GET['site']);
                 $company->setNotes($_GET['notes']);
-                $company->setPointofcontact($_POST['poc']);
-                $company->setPhonenumber($_POST['phone']);
-                $company->setEmail($_POST['email']);
+                $company->setPointofcontact($_GET['poc']);
+                $company->setPhonenumber($_GET['phone']);
+                $company->setEmail($_GET['email']);
                 $company->setId(intval($_GET['id']));
 
                 updateCompany($db, $company);
