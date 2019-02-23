@@ -16,7 +16,7 @@ $db = get_db();
 
     <body>
        <?php 
-       if($_POST['submissionId'] != null){
+       if($_GET['submissionId'] != null){
             $_SESSION['submissionId'] = $_GET['submissionId'];
         }
        $submission = getSubmissionById($db,intval($_SESSION['submissionId']));
