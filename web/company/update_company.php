@@ -34,7 +34,9 @@ $db = get_db();
 
     <?php
         if(!isset($_POST['name']) && !empty($_POST['save'])){
-            echo "ERROR NEED NAME";
+            echo '<script type="text/javascript">',
+     'alert("A Name is Required to Save a Company.)',
+     '</script>';
         }else{
             // $company = new Company();
             $company->setCompanyname($_POST['name']);
