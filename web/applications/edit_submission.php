@@ -17,7 +17,7 @@ $db = get_db();
     <body>
        <?php 
        $submission = getSubmissionById($db,intval($_SESSION['submissionId']));
-       echo "<h1>". $submission->getJobTitle()."</h1>";
+       echo "<h1>". $submission->getJobtitle()."</h1>";
        ?>
        <label>Job Title</label><input type='text' id='job-title' value=<?=$submission->getJobtitle()?> />
        <label>Company</label><input type='text' id='company' value=<?=$submission->getJobtitle()?> />
