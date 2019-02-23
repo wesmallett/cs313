@@ -33,8 +33,8 @@ $db = get_db();
     </body>
 
     <?php
-        if(empty($_POST)){
-
+        if(empty($_POST['name'])){
+            echo "ERROR NEED NAME";
         }else{
             // $company = new Company();
             $company->setCompanyname($_POST['name']);
@@ -50,8 +50,7 @@ $db = get_db();
             // $company->setId(intval($_SESSION['companyId']));
 
             if($company->getCompanyname() == null){
-                echo "Name is required";
-                exit();
+
             }else{
                 updateCompany($db, $company);
 
