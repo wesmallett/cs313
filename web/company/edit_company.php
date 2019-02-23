@@ -25,8 +25,8 @@ $db = get_db();
                 $company->setId(intval($_POST['id']));
 
                 updateCompany($db, $company);
-                error_log("success?");
-                header("Location: view_company.php");
+
+                header("Location: update_company.php");
                 exit();
             }else{
                 echo "A Company Name is Required";
