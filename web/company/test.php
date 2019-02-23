@@ -10,6 +10,7 @@ $db = get_db();
         }else{
             if($_GET['name']!=null){
                 $company = new Company();
+                $company->setId($_GET['id']);
                 $company->setCompanyname($_GET['name']);
                 $company->setStreetaddress($_GET['street-address']);
                 $company->setCity($_GET['city']);
