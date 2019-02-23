@@ -19,7 +19,6 @@ $db = get_db();
        ?>
        <form action="update_company.php" method="GET">
         <?=error_log("Test LOGS");?>
-            <input type="hidden" name='id' value="<?= $_POST['companyId']?>"/>
             <label>Company</label><input type='text' name='name' value="<?= $company->getCompanyname();?>"/>
             <label>Address</label><input type='text' name='street-address' value="<?=$company->getStreetaddress();?>" />
             <label>City</label><input type='text' name='city' value="<?=$company->getCity();?>" />
@@ -29,6 +28,7 @@ $db = get_db();
             <label>Point of Contact</label><input type='text' name='poc' value="<?=$company->getPointofcontact();?>" />
             <label>Phone Number</label><input type='text' name='phone' value="<?=$company->getPhonenumber();?>" />
             <label>Email</label><input type='text' name='email' value="<?=$company->getEmail();?>" />
+            <input type="hidden" name='id' value="<?= $_POST['companyId']?>"/>
             <input type='Submit' name='save' value='Save'/>
         </form>
     </body>
