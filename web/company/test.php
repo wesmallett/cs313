@@ -4,7 +4,7 @@ require "../data/applicationSubmissionData.php";
 require_once "../data/companyData.php";
 require_once "../models/company.php";
 
-
+$db = get_db();
         if(empty($_GET)){
 
         }else{
