@@ -3,6 +3,7 @@ require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 require "../data/companyData.php";
 include_once "../models/applicationSubmission.php";
+include_once "../models/company.php";
 session_start();
 $db = get_db();
 ?>
