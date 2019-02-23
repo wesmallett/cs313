@@ -16,11 +16,14 @@ $db = get_db();
 
     <body>
        <?php 
-       $company = getCompanyById($db,intval($_POST['companyId']));
-       $_SESSION['companyId'] = $_POST['companyId'];
+       if($_POST['companyId'] != null){
+            $_SESSION['companyId'] = $_POST['companyId'];
+       }
+
+       $company = getCompanyById($db,intval($_SESSION['companyId']));
        ?>
         <form action="update_company.php" method="POST">
-            <input type="hidden" name="companyId" value=<?= $_POST['companyId']?> />
+            <input type="hidden" name="companyId" value=<?= $_SESSION['companyId']?> />
             <input type="submit" name="edit" value='Edit Company'/>
        </form>
        <?=$_SESSION['companyId']?>
@@ -33,7 +36,7 @@ $db = get_db();
        <?=$company->getEmail()?>
        <?=$company->getPhonenumber()?>
 
-        <?= $companySubmissions = getSubmissionsByCompany($db, intval($_POST['companyId']));
+        <?= $companySubmissions = getSubmissionsByCompany($db, intval($_SESSION['companyId']));
         if(sizeof($companySubmissions) > 1){
             echo "You have not applied for any positions.";
         }else{
