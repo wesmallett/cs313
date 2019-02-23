@@ -8,9 +8,7 @@ $db = get_db();
         if(empty($_POST)){
 
         }else{
-            error_log("attempting to save");
             if($_POST['name']!=null){
-                error_log("saving");
                 $company = new Company();
                 $company->setCompanyname($_POST['name']);
                 $company->setStreetaddress($_POST['street-address']);
