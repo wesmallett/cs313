@@ -23,6 +23,7 @@ $db = get_db();
             <input type="hidden" name="companyId" value=<?= $_POST['companyId']?> />
             <input type="submit" name="edit" value='Edit Company'/>
        </form>
+       <?=$_SESSION['companyId']?>
        <?=$company->getCompanyname()?>
        <?=$company->getStreetaddress()?>
        <?=$company->getCity()?>
