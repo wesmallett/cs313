@@ -15,6 +15,7 @@ $db = get_db();
 
     <body>
        <?php 
+       error_log($_SESSION['companyId']);
        $_SESSION['companyId'];
        $company = getCompanyById($db,intval($_SESSION['companyId']));
        echo "<h1>". $company->getCompanyname()."</h1>";
