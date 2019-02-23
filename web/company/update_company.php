@@ -15,7 +15,7 @@ $db = get_db();
 
     <body>
        <?php 
-       $company = getCompanyById($db,intval($_POST['companyId']));
+       $company = getCompanyById($db,intval($_SESSION['companyId']));
        echo "<h1>". $company->getCompanyname()."</h1>";
        ?>
        <form action="edit_company.php" method="POST">

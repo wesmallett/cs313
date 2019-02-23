@@ -22,12 +22,13 @@ $db = get_db();
                 $company->setPointofcontact($_POST['poc']);
                 $company->setPhonenumber($_POST['phone']);
                 $company->setEmail($_POST['email']);
-                $company->setId(intval($_POST['id']));
+                $company->setId(intval($_SESSION['companyId']));
 
                 updateCompany($db, $company);
 
-                header("Location: update_company.php");
+                header("Location: company_overview.php");
                 exit();
+
             }else{
                 echo "A Company Name is Required";
             }

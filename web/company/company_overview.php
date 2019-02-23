@@ -17,6 +17,7 @@ $db = get_db();
     <body>
        <?php 
        $company = getCompanyById($db,intval($_POST['companyId']));
+       $_SESSION['companyId'] = $_POST['companyId'];
        ?>
         <form action="update_company.php" method="POST">
             <input type="hidden" name="companyId" value=<?= $_POST['companyId']?> />
