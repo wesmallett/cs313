@@ -18,7 +18,7 @@ $db = get_db();
        $company = getCompanyById($db,intval($_POST['companyId']));
        echo "<h1>". $company->getCompanyname()."</h1>";
        ?>
-       <form action="update_company.php" method="GET">
+       <form action="edit_company.php" method="POST">
             <label>Company</label><input type='text' name='name' value="<?= $company->getCompanyname();?>"/>
             <label>Address</label><input type='text' name='street-address' value="<?=$company->getStreetaddress();?>" />
             <label>City</label><input type='text' name='city' value="<?=$company->getCity();?>" />
@@ -34,32 +34,32 @@ $db = get_db();
     </body>
 
     <?php
-        if(empty($_GET)){
+        // if(empty($_GET)){
 
-        }else{
-            error_log("Updating...maybe");
-            if($_GET['name']!=null){
-                error_log("Attempting to call Update");
-                $company->setCompanyname($_GET['name']);
-                $company->setStreetaddress($_GET['street-address']);
-                $company->setCity($_GET['city']);
-                $company->setState($_GET['state']);
-                $company->setZipcode($_GET['zip']);
-                $company->setCompanywebsite($_GET['site']);
-                $company->setNotes($_GET['notes']);
-                $company->setPointofcontact($_POST['poc']);
-                $company->setPhonenumber($_POST['phone']);
-                $company->setEmail($_POST['email']);
+        // }else{
+        //     error_log("Updating...maybe");
+        //     if($_GET['name']!=null){
+        //         error_log("Attempting to call Update");
+        //         $company->setCompanyname($_GET['name']);
+        //         $company->setStreetaddress($_GET['street-address']);
+        //         $company->setCity($_GET['city']);
+        //         $company->setState($_GET['state']);
+        //         $company->setZipcode($_GET['zip']);
+        //         $company->setCompanywebsite($_GET['site']);
+        //         $company->setNotes($_GET['notes']);
+        //         $company->setPointofcontact($_POST['poc']);
+        //         $company->setPhonenumber($_POST['phone']);
+        //         $company->setEmail($_POST['email']);
 
-                updateCompany($db, $company);
+        //         updateCompany($db, $company);
     
-                header("Location: view_company.php");
-                exit();
-            }else{
-                error_log("There was a problem");
-                echo "A Company Name is Required";
-            }
-        }        
+        //         header("Location: view_company.php");
+        //         exit();
+        //     }else{
+        //         error_log("There was a problem");
+        //         echo "A Company Name is Required";
+        //     }
+        // }        
 
         ?>
 </html>
