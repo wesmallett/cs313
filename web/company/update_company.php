@@ -33,7 +33,7 @@ $db = get_db();
     </body>
 
     <?php
-        if(!isset($_POST['name']) && empty($_POST['save'])){
+        if(!isset($_POST['name']) && !empty($_POST['save'])){
             echo "ERROR NEED NAME";
         }else{
             // $company = new Company();
