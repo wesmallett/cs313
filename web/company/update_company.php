@@ -19,7 +19,7 @@ $db = get_db();
        ?>
        <form action="update_company.php" method="GET">
         <?=error_log("Test LOGS");?>
-            <input type='hidden' name='id' value=<?=intval($_POST['companyId']);?>/>
+            <input type='hidden' name='id' value="<?=intval($_POST['companyId']);?>"/>
             <label>Company</label><input type='text' name='name' value="<?= $company->getCompanyname();?>"/>
             <label>Address</label><input type='text' name='street-address' value="<?=$company->getStreetaddress();?>" />
             <label>City</label><input type='text' name='city' value="<?=$company->getCity();?>" />
@@ -37,6 +37,7 @@ $db = get_db();
         if(empty($_GET)){
 
         }else{
+            error_log("Updating...maybe");
             if($_GET['name']!=null){
                 error_log("Attempting to call Update");
                 $company->setCompanyname($_GET['name']);
@@ -55,6 +56,7 @@ $db = get_db();
                 header("Location: view_company.php");
                 exit();
             }else{
+                error_log("There was a problem");
                 echo "A Company Name is Required";
             }
         }        
