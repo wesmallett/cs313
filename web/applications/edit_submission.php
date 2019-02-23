@@ -2,8 +2,10 @@
 require_once "../resources/dbConnect.php";
 require "../data/applicationSubmissionData.php";
 require "../data/companyData.php";
+require "../data/applicationStatusData.php";
 include_once "../models/applicationSubmission.php";
 include_once "../models/company.php";
+include_once "../models/applicationStatus.php";
 session_start();
 $db = get_db();
 ?>
@@ -19,29 +21,33 @@ $db = get_db();
        $submission = getSubmissionById($db,intval($_SESSION['submissionId']));
        echo "<h1>". $submission->getJobtitle()."</h1>";
        ?>
-       <label>Job Title</label><input type='text' id='job-title' value=<?=$submission->getJobtitle()?> />
-       <label>Company</label><input type='text' id='company' value=<?=$submission->getJobtitle()?> />
-       <label>CompanyId</label><input type='text' id='id' value=<?=getCompanyByName($db,$submission->getCompany())->getId();?> />
-       <input type='Submit' name='save' value='Save'/>
+
+       <form action="edit_submission.php" method="POST">
+        <label>Job Title</label><input type='text' name='job-title' value=<?=$submission->getJobtitle()?> />
+        <label>Company</label><input type='text' name='company' value=<?=$submission->getJobtitle()?> />
+        <label>Salary Requested</label><input type='text' name='salary' value=<?=$submission->getSalaryrequested()?> />
+        <label>Notes</label><input type='text' name='notes' value=<?=$submission->getNotes()?> />
+        <label>Submitted Resume</label><input type='text' name='resume' value=<?=$submission->getResumesubmission()?> />
+        <label>Submitted Cover Letter</label><input type='text' name='cover-letter' value=<?=$submission->getCoverlettersubmission()?> />
+        <label>Status</label><input type='text' name='status' value=<?=$submission->getApplicationstatus()?> />
+        <input type='Submit' name='save' value='Save'/>
+       </form>
     </body>
     <?php
         if(!isset($_POST['job-title']) && !empty($_POST['save'])){
             echo "<script type='text/javascript'>invalidName();</script>";
         }else{
-            $submission->setCompanyId($_POST['name']);
-            $submission->setStreetaddress($_POST['street-address']);
-            $submission->setCity($_POST['city']);
-            $submission->setState($_POST['state']);
-            $submission->setZipcode($_POST['zip']);
-            $submission->setCompanywebsite($_POST['site']);
+            $submission->setCompanyId(getCompanyByName($db,$_POST('company'))->getId());
+            $submission->setJobtitle($_POST['job-title']);
+            $submission->setSalaryrequested($_POST['salary']);
             $submission->setNotes($_POST['notes']);
-            $submission->setPointofcontact($_POST['poc']);
-            $submission->setPhonenumber($_POST['phone']);
-            $submission->setEmail($_POST['email']);
+            $submission->setResumesubmission($_POST['resume']);
+            $submission->setCoverlettersubmission($_POST['cover-letter']);
+            $submission->setApplicationstatusid(getStatusByName($db,$_POST('status'))->getId());
 
-            updateCompany($db, $company);
+            updateSubmission($db, $submission);
 
-            header("Location: company_overview.php");
+            header("Location: submission_overview.php");
             exit();
         }        
 
