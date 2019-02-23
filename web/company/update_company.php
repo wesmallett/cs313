@@ -35,7 +35,7 @@ $db = get_db();
     <?php
         if(!isset($_POST['name']) && !empty($_POST['save'])){
             echo '<script type="text/javascript">',
-     'alert("A Name is Required to Save a Company.)',
+     'alert("A Name is Required to Save a Company.")',
      '</script>';
         }else{
             // $company = new Company();
