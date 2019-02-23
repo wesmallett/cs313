@@ -36,8 +36,7 @@ $db = get_db();
         if(empty($_POST)){
 
         }else{
-            if($_POST['name']!=null){
-                $company = new Company();
+                // $company = new Company();
                 $company->setCompanyname($_POST['name']);
                 $company->setStreetaddress($_POST['street-address']);
                 $company->setCity($_POST['city']);
@@ -48,16 +47,12 @@ $db = get_db();
                 $company->setPointofcontact($_POST['poc']);
                 $company->setPhonenumber($_POST['phone']);
                 $company->setEmail($_POST['email']);
-                $company->setId(intval($_SESSION['companyId']));
+                // $company->setId(intval($_SESSION['companyId']));
 
                 updateCompany($db, $company);
 
                 header("Location: company_overview.php");
                 exit();
-
-            }else{
-                echo "A Company Name is Required";
-            }
         }        
 
         ?>
