@@ -39,7 +39,7 @@ $db = get_db();
 
     <?php
         if(!isset($_POST['name']) && !empty($_POST['save'])){
-            echo "<script type='text/javascript'>invalidName();</script>";
+            ?><script type='text/javascript'>invalidName();</script><?php
         }else{
             // $company = new Company();
             $company->setCompanyname($_POST['name']);
