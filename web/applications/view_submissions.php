@@ -54,7 +54,7 @@ $db = get_db();
         <td><?=$submission->getJobtitle()?></td>
         <td><?=$submission->getSubmissiondate()?></td>
         <td><?=$submission->getSalaryrequested()?></td>
-        <td><a href='http://<?=$submission->getLinktojobposting?>' target='_blank'><?=$submission->getLinktojobposting?></a></td>
+        <td><a href='http://<?=$submission->getLinktojobposting()?>' target='_blank'><?=$submission->getLinktojobposting()?></a></td>
         </tr>
     <?php
     }
