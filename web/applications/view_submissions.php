@@ -46,15 +46,15 @@ $db = get_db();
         ?>
         <tr>
         <td><form action="submission_overview.php" method="GET">
-        <input type="hidden" name=submissionId value=<?=$submission['id']?> />
+        <input type="hidden" name="submissionId" value=<?=$submission->getId()?> />
         <input type="submit" id="view_overview" name="insert" value="View" />
         </form></td>
-        <td><?=$submission['status']?></td>
-        <td><?=$submission['company']?></td>
-        <td><?=$submission['jobtitle']?></td>
-        <td><?=$submission['submissiondate']?></td>
-        <td><?=$submission['salaryrequested']?></td>
-        <td><a href='http://<?=$submission['linktojobposting']?>' target='_blank'><?=$submission['linktojobposting']?></a></td>
+        <td><?=$submission->getApplicationStatus()?></td>
+        <td><?=$submission->getCompany()?></td>
+        <td><?=$submission->getJobtitle()?></td>
+        <td><?=$submission->getSubmissiondate()?></td>
+        <td><?=$submission->getSalaryrequested()?></td>
+        <td><a href='http://<?=$submission->getLinktojobposting?>' target='_blank'><?=$submission->getLinktojobposting?></a></td>
         </tr>
     <?php
     }
