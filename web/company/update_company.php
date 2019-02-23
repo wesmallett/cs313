@@ -25,6 +25,9 @@ $db = get_db();
             <label>State</label><input type='text' name='state' value="<?=$company->getState();?>" />
             <label>Zip</label><input type='text' name='zipcode' value="<?=$company->getZipcode();?>" />
             <label>Notes</label><input type='text' name='notes' value="<?=$company->getNotes();?>" />
+            <label>Point of Contact</label><input type='text' name='poc' value="<?=$company->getPointofcontact();?>" />
+            <label>Phone Number</label><input type='text' name='phone' value="<?=$company->getPhonenumber();?>" />
+            <label>Email</label><input type='text' name='email' value="<?=$company->getEmail();?>" />
             <input type='Submit' name='save' value='Save'/>
         </form>
     </body>
@@ -41,9 +44,9 @@ $db = get_db();
                 $company->setZipcode($_GET['zip']);
                 $company->setCompanywebsite($_GET['site']);
                 $company->setNotes($_GET['notes']);
-                // $company->setPointofcontact($_POST['contact']);
-                // $company->setPhonenumber($_POST['phone-number']);
-                // $company->setEmail($_POST['email']);
+                $company->setPointofcontact($_POST['poc']);
+                $company->setPhonenumber($_POST['phone']);
+                $company->setEmail($_POST['email']);
 
                 updateCompany($db, $company);
     
