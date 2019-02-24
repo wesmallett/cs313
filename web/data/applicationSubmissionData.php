@@ -32,7 +32,7 @@ function updateSubmission($db, $submission){
     $sql = "UPDATE application_submissions SET companyid = :companyid, jobtitle = :jobtitle, salaryrequested = :salaryrequested, submissiondate = :submissiondate,
     resumesubmission = :resume, covverlettersubmission = :coverletter, notes = :notes, linetojobposting = :linktojob, applicationstatusid = :statusid where id = :submissionId";
     $statement = $db->prepare($sql);
-    $statement->bindParam(':companyId',$submission->getCompanyid());
+    $statement->bindParam(':companyid',$submission->getCompanyid());
     $statement->bindParam(':jobtitle',$submission->getJobtitle());
     $statement->bindParam(':salaryrequested',$submission->getRequestedsalary());
     $statement->bindParam(':submissiondate',$submission->getSubmissiondate());
