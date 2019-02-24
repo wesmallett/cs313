@@ -49,7 +49,9 @@ $db = get_db();
             $submission->setNotes($_POST['notes']);
             $submission->setResumesubmission($_POST['resume']);
             $submission->setCoverlettersubmission($_POST['cover-letter']);
-            $submission->setApplicationstatusid(getStatusByName($db,$_POST['status'])->getId());
+            $status = $_POST['status'];
+            $statusId = getStatusByName($db,$status)->getId();
+            $submission->setApplicationstatusid($statusId);
 
             updateSubmission($db, $submission);
 
