@@ -40,8 +40,8 @@ $db = get_db();
         if(!isset($_POST['job-title']) && !empty($_POST['save'])){
             echo "<script type='text/javascript'>invalidName();</script>";
         }else{
-            $companyId = getCompanyByName($db,$_POST('company'))->getId();
-            $submission->setCompanyId($companyId);
+            $companyId = getCompanyByName($db,$_POST['company'])->getId();
+            $submission->setCompanyId(getCompanyByName($db,$_POST['company'])->getId());
             $submission->setJobtitle($_POST['job-title']);
             $submission->setSalaryrequested($_POST['salary']);
             $submission->setNotes($_POST['notes']);
