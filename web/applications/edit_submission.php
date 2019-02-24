@@ -24,7 +24,7 @@ $db = get_db();
 
        <form action="edit_submission.php" method="POST">
         <label>Job Title</label><input type='text' name='job-title' value="<?=$submission->getJobtitle()?>" />
-        <label>Company</label><input type='text' name='company' value="<?=$submission->getCompany()?>" />
+        <label>Company</label><input type='text' id='company' value="<?=$submission->getCompany()?>" />
         <label>Salary Requested</label><input type='text' name='salary' value="<?=$submission->getSalaryrequested()?>" />
         <label>Notes</label><input type='text' name='notes' value="<?=$submission->getNotes()?>" />
         <label>Submitted Resume</label><input type='text' name='resume' value="<?=$submission->getResumesubmission()?>" />
@@ -40,7 +40,7 @@ $db = get_db();
         if(!isset($_POST['job-title']) && !empty($_POST['save'])){
             echo "<script type='text/javascript'>invalidName();</script>";
         }else{
-            $companyId = getCompanyByName($db,$_POST('company'))->id();
+            $companyId = getCompanyByName($db,$_POST('company'));
             $submission->setCompanyId($companyId);
             $submission->setJobtitle($_POST['job-title']);
             $submission->setSalaryrequested($_POST['salary']);
