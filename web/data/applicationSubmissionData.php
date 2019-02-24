@@ -34,7 +34,7 @@ function updateSubmission($db, $submission){
     $statement = $db->prepare($sql);
     $statement->bindParam(':companyid',$submission->getCompanyid());
     $statement->bindParam(':jobtitle',$submission->getJobtitle());
-    $statement->bindParam(':salaryrequested',$submission->getRequestedsalary());
+    $statement->bindParam(':salaryrequested',$submission->getSalaryrequested());
     $statement->bindParam(':submissiondate',$submission->getSubmissiondate());
     $statement->bindParam(':resume',$submission->getResumesubmission());
     $statement->bindParam(':coverletter',$submission->getCoverlettersubmission());
