@@ -25,7 +25,6 @@ function getCompanyByName($db,$companyName){
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_CLASS,"Company");
     $company = $result[0];
-    var_dump($company);
     return $company;
 }
 
