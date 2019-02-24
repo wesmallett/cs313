@@ -41,6 +41,7 @@ $db = get_db();
             echo "<script type='text/javascript'>invalidName();</script>";
         }else{
             $company = $_POST['company'];
+            echo $company;
             $companyId = getCompanyByName($db,$company)->getId();
             $submission->setCompanyId(getCompanyByName($db,$_POST['company'])->getId());
             $submission->setJobtitle($_POST['job-title']);
