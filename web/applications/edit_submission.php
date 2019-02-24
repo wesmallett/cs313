@@ -32,8 +32,8 @@ $db = get_db();
         <label>Status</label><input type='text' name='status' value="<?=$submission->getApplicationstatus()?>" />
         <input type='Submit' name='save' value='Save'/>
        </form>
-       <?=$blah = getCompanyByName($db,$submission->getCompany());
-       $blah->getId();
+       <?=$blah = getCompanyByName($db,$submission->getCompany())->getId();
+       echo $blah;
        ?>
     </body>
     <?php
