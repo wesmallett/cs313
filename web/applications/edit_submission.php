@@ -24,7 +24,7 @@ $db = get_db();
 
        <form action="edit_submission.php" method="POST">
         <label>Job Title</label><input type='text' name='job-title' value="<?=$submission->getJobtitle()?>" />
-        <label>Company</label><input type='text' id='company' value="<?=$submission->getCompany()?>" />
+        <label>Company</label><input type='text' name='company' value="<?=$submission->getCompany()?>" />
         <label>Salary Requested</label><input type='text' name='salary' value="<?=$submission->getSalaryrequested()?>" />
         <label>Notes</label><input type='text' name='notes' value="<?=$submission->getNotes()?>" />
         <label>Submitted Resume</label><input type='text' name='resume' value="<?=$submission->getResumesubmission()?>" />
