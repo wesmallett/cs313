@@ -42,6 +42,7 @@ $db = get_db();
         }else{
             error_log("lets try this");
             $company = $_POST['company'];
+            error_log($company);
             $companyId = getCompanyByName($db,$company)->getId();
             $submission->setCompanyId(getCompanyByName($db,$_POST['company'])->getId());
             $submission->setJobtitle($_POST['job-title']);

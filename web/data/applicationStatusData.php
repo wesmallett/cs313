@@ -25,6 +25,7 @@ function getStatusByName($db,$status){
     $statement->bindParam(':status',$status);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_CLASS,"ApplicationStatus");
+    $status = $result[0];
     return $status;
 }
 
