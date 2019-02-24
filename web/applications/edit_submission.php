@@ -50,7 +50,7 @@ $db = get_db();
             $submission->setNotes($_POST['notes']);
             $submission->setResumesubmission($_POST['resume']);
             $submission->setCoverlettersubmission($_POST['cover-letter']);
-            $submission->setApplicationstatusid(getStatusByName($db,$_POST('status'))->getId());
+            $submission->setApplicationstatusid(getStatusByName($db,$_POST['status'])->getId());
 
             updateSubmission($db, $submission);
 
