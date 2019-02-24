@@ -41,7 +41,7 @@ function updateSubmission($db, $submission){
     $statement->bindParam(':notes',$submission->getNotes());
     $statement->bindParam(':linktojob',$submission->getLinktojobposting());
     $statement->bindParam(':statusid',$submission->getApplicationstatusid());
-    $statement->bindParam(':submissionid',$submission->getId());
+    $statement->bindParam(':submissionId',$submission->getId());
     $statement->execute();
 }
 
